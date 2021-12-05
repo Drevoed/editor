@@ -30,7 +30,7 @@ const input = 'src/editor/index.ts'
 const external = [
   ...Object.keys(pkg.devDependencies),
   ...Object.keys(pkg.dependencies),
-  ...Object.keys(pkg.peerDependencies),
+  ...Object.keys(pkg.peerDependencies || {}),
 ]
 
 // eslint-disable-next-line import/no-anonymous-default-export
