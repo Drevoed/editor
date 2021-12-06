@@ -1,8 +1,8 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React, { useEffect, useRef, useState } from 'react'
 import { Element, Text } from 'slate'
-import { Editor, EditorValue, useExtendedEditor } from './editor'
-import { GlobalStyles } from './editor/global-styles'
+import { Editor, EditorValue, useExtendedEditor } from '../packages/editor/src'
+import { GlobalStyles } from '../packages/editor/src/global-styles'
 
 const initialState: EditorValue = [
   {

@@ -12,8 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
-    "jsx": "preserve",
-    "importsNotUsedAsValues": "error"
+    "jsx": "react",
+    "composite": true
   },
-  "include": ["./src"]
 }

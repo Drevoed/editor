@@ -1,0 +1,30 @@
+{
+  "name": "@cardbox-editor/editor",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0-real-version-will-be-set-at-the-ci",
+  "main": "dist/editor.cjs.js",
+  "module": "dist/editor.esm.js",
+  "unpkg": "dist/editor.umd.js",
+  "types": "dist/editor.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "is-hotkey": "0.2.0",
+    "just-debounce-it": "^3.0.1",
+    "prismjs": "^1.25.0",
+    "slate": "0.71.0",
+    "slate-history": "0.66.0",
+    "slate-react": "0.71.0",
+    "throttleit": "^1.0.0",
+    "@tippyjs/react": "^4.2.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3",
+    "tippy.js": "^6.3.7"
+  },
+  "license": "MIT"
+}

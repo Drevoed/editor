@@ -19,7 +19,6 @@ const common = {
         },
       },
     ],
-    '@babel/preset-react',
     '@babel/typescript',
   ],
   overrides: [
