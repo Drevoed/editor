@@ -1,0 +1,16 @@
+{
+  "name": "slate-solid",
+  "version": "1.0.0",
+  "dependencies": {
+    "slate": "^0.72.0",
+    "solid-js": "^1.2.5",
+    "is-hotkey": "^0.2.0",
+    "direction": "^2.0.1",
+    "just-debounce-it": "^3.0.1",
+    "throttleit": "^1.0.0",
+    "scroll-into-view-if-needed": "^2.2.28"
+  },
+  "devDependencies": {
+    "@types/throttleit": "^1.0.0"
+  }
+}

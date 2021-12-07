@@ -121,6 +121,30 @@ importers:
       styled-components: 5.3.3_react-dom@17.0.2+react@17.0.2
       tippy.js: 6.3.7
 
+  packages/editor-solid:
+    specifiers: {}
+
+  packages/slate-solid:
+    specifiers:
+      '@types/throttleit': ^1.0.0
+      direction: ^2.0.1
+      is-hotkey: ^0.2.0
+      just-debounce-it: ^3.0.1
+      scroll-into-view-if-needed: ^2.2.28
+      slate: ^0.72.0
+      solid-js: ^1.2.5
+      throttleit: ^1.0.0
+    dependencies:
+      direction: 2.0.1
+      is-hotkey: 0.2.0
+      just-debounce-it: 3.0.1
+      scroll-into-view-if-needed: 2.2.28
+      slate: 0.72.0
+      solid-js: 1.2.5
+      throttleit: 1.0.0
+    devDependencies:
+      '@types/throttleit': 1.0.0
+
 packages:
 
   /@babel/code-frame/7.12.11:
@@ -2418,6 +2442,11 @@ packages:
     hasBin: true
     dev: false
 
+  /direction/2.0.1:
+    resolution: {integrity: sha512-9S6m9Sukh1cZNknO1CWAr2QAWsbKLafQiyM5gZ7VgXHeuaoUwffKN4q6NC4A/Mf9iiPlOXQEKW/Mv/mh9/3YFA==}
+    hasBin: true
+    dev: false
+
   /doctrine/2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -4248,7 +4277,6 @@ packages:
 
   /solid-js/1.2.5:
     resolution: {integrity: sha512-XcPEULgqd/XbBu8LwtGWs5RGowvIpq88/ZNI/xgJ9PaxRJWwbVlSNsS+ywUWncxRdKsPoVe8vdcIsH4gBJjh3Q==}
-    dev: true
 
   /solid-refresh/0.3.2_solid-js@1.2.5:
     resolution: {integrity: sha512-7lg3EjenGoxQvGoZnTD3d480wBxbpAiAsyk0dhoGq6hjcaAQ3vnsBGxvXV0LBTzeQcGmIRz1GeSsw/64YyNr+g==}

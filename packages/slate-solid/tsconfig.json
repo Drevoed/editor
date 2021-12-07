@@ -5,9 +5,11 @@
     "composite": true,
     "importsNotUsedAsValues": "error",
     "rootDir": "src",
-    "declaration": true
+    "declarationDir": "dist",
+    "declaration": true,
+    "strict": false,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
-  "references": [{
-    "path": "../core"
-  }]
+  "references": []
 }
