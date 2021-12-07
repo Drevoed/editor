@@ -1,10 +1,10 @@
 {
   "name": "@cardbox-editor/core",
   "version": "1.0.0",
-  "main": "dist/core.cjs.js",
-  "module": "dist/core.esm.js",
-  "unpkg": "dist/core.umd.js",
-  "types": "dist/core.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

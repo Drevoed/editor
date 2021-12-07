@@ -1,0 +1,39 @@
+{
+  "name": "@cardbox-editor/editor-react",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0-real-version-will-be-set-at-the-ci",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@cardbox-editor/core": "workspace:*",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tippy.js": "^6.3.7",
+    "@tippyjs/react": "^4.2.6",
+    "slate-react": "^0.71.0",
+    "slate-history": "^0.66.0",
+    "slate": "^0.71.0",
+    "clsx": "^1.1.1",
+    "styled-components": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@cardbox-editor/core": "workspace:*",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tippy.js": "^6.3.7",
+    "@tippyjs/react": "^4.2.6",
+    "slate-react": "^0.71.0",
+    "slate-history": "^0.66.0",
+    "slate": "^0.71.0",
+    "clsx": "^1.1.1",
+    "styled-components": "^5.3.3"
+  },
+  "license": "MIT"
+}

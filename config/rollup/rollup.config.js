@@ -4,7 +4,8 @@ import typescript from "rollup-plugin-typescript2";
 import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 
-import Editor from '../../packages/editor/package.json';
+import Editor from '../../packages/editor-react/package.json';
+import Core from '../../packages/core/package.json';
 import { minifyConfig } from '../../build/minification.js'
 
 const extensions = ['.ts', '.tsx', '.js']
@@ -40,7 +41,7 @@ function configure(pkg, env, target) {
   const plugins = [
     typescript({
       tsconfig: `packages/${pkgName}/tsconfig.json`,
-      check: false
+      check: false,
     }),
     resolverPlugin,
     babelPlugin,
@@ -98,11 +99,12 @@ function factory(pkg, options = {}) {
   return [
     configure(pkg, 'development', 'cjs'),
     configure(pkg, 'development', 'module'),
-    configure(pkg, 'production', 'umd')
+    configure(pkg, 'production', 'umd'),
   ].filter(Boolean)
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
-  ...factory(Editor)
+  ...factory(Core),
+  ...factory(Editor),
 ]

@@ -4,11 +4,25 @@ import type {
   ListenerConfig,
 } from './types'
 
+export * from './types'
+
+interface KeyboardEventLike {
+  key: string
+  which: number
+  altKey: boolean
+  ctrlKey: boolean
+  metaKey: boolean
+  shiftKey: boolean
+  stopPropagation: () => void
+  preventDefault: () => void
+}
+
 export function createActionController<
   TAction extends string = string,
-  TParams extends ActionBaseParams = ActionBaseParams
+  TEvent extends KeyboardEventLike = KeyboardEvent,
+  TParams extends ActionBaseParams<TEvent> = ActionBaseParams<TEvent>
 >() {
-  type LocalListenerConfig = ListenerConfig<TParams>
+  type LocalListenerConfig = ListenerConfig<TEvent, TParams>
 
   const listeners: Map<TAction, LocalListenerConfig[]> = new Map()
 

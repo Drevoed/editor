@@ -1,11 +1,19 @@
-import type { ActionCallback } from '../lib/action-controller/types'
 import { GlobalTransforms } from '../lib/global-transforms'
-import type { ActionParams } from '../registries/actions'
+import type { Editor } from 'slate'
+import type {
+  ActionCallbackResult,
+  ActionParams,
+  KeyboardEventLike,
+} from '../lib/action-controller'
 
-export const getOutTheLeaf: ActionCallback<ActionParams> = ({
+export const getOutTheLeaf = <
+  TEvent extends KeyboardEventLike = KeyboardEvent,
+  TEditor extends import('slate').BaseEditor = Editor,
+  TParams extends ActionParams<TEditor, TEvent> = ActionParams<TEditor, TEvent>
+>({
   editor,
   event,
-}) => {
+}: TParams): void | ActionCallbackResult => {
   const { success } = GlobalTransforms.getOutTheLeaf(editor)
   if (success) event.preventDefault()
 }

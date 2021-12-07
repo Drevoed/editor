@@ -1,6 +1,16 @@
-import type { ActionCallback } from '../lib/action-controller/types'
-import type { ActionParams } from '../registries/actions'
+import type {
+  ActionBaseParams,
+  ActionCallback,
+  ActionCallbackResult,
+  ActionParams,
+  KeyboardEventLike,
+} from '../lib/action-controller'
 
-export const indent: ActionCallback<ActionParams> = ({ event }) => {
+export const indent = <
+  TEvent extends KeyboardEventLike = KeyboardEvent,
+  TParams extends ActionBaseParams<TEvent> = ActionBaseParams<TEvent>
+>({
+  event,
+}: TParams): void | ActionCallbackResult => {
   event.preventDefault()
 }

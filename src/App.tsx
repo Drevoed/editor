@@ -1,8 +1,12 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React, { useEffect, useRef, useState } from 'react'
 import { Element, Text } from 'slate'
-import { Editor, EditorValue, useExtendedEditor } from '../packages/editor/src'
-import { GlobalStyles } from '../packages/editor/src/global-styles'
+import {
+  Editor,
+  useExtendedEditor,
+  EditorGlobalStyles,
+} from '@cardbox-editor/editor-react'
+import type { EditorValue } from '@cardbox-editor/core'
 
 const initialState: EditorValue = [
   {
@@ -168,7 +172,7 @@ function printValue(value: EditorValue) {
   }
 
   const string = strings.join('\n')
-  console.group('editor value changed')
+  console.group('editor-react value changed')
   console.log(string)
   console.groupEnd()
 }
@@ -191,12 +195,12 @@ export const App = () => {
 
   useEffect(() => {
     ;(window as any).getEditorValue = () => value
-    console.log('To print current value of editor run `getEditorValue()`')
+    console.log('To print current value of editor-react run `getEditorValue()`')
   }, [])
 
   return (
     <>
-      <GlobalStyles />
+      <EditorGlobalStyles />
       <Editor editor={editor} value={value} onChange={setValue} />
     </>
   )

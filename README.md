@@ -7,7 +7,7 @@
 First, install the main package:
 
 ```sh
-yarn add @cardbox/editor
+yarn add @cardbox/editor-react
 ```
 
 Second, install the peer dependencies:
@@ -20,7 +20,7 @@ Then, use it:
 
 ```tsx
 // root
-import { EditorGlobalStyles } from '@cardbox/editor'
+import { EditorGlobalStyles } from '@cardbox/editor-react'
 
 const App = () => {
   <>
@@ -37,7 +37,7 @@ import {
   useExtendedEditor,
   EditorValue,
   isEditorEmpty
-} from '@cardbox/editor'
+} from '@cardbox/editor-react'
 
 const MyEditor = () => {
   const editor = useExtendedEditor(/* pass extensions if you want */)
