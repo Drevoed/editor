@@ -110,13 +110,11 @@ const Slate = (props: SlateProps) => {
     setIsFocused(SolidEditor.isFocused(getEditor()))
   })
 
-  const fn = () => setIsFocused(SolidEditor.isFocused(getEditor()))
-
   onMount(() => {
+    const fn = () => setIsFocused(SolidEditor.isFocused(getEditor()))
     document.addEventListener('blur', fn, true)
+    onCleanup(() => document.removeEventListener('blur', fn, true))
   })
-
-  onCleanup(() => document.removeEventListener('blur', fn, true))
 
   onError((e) => console.error(e))
   return (

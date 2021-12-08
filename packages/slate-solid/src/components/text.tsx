@@ -1,17 +1,14 @@
 import { Range, Element, Text as SlateText } from 'slate'
-import type { JSX, Accessor } from 'solid-js'
+import type { JSX } from 'solid-js'
 import Leaf from './leaf'
 import { SolidEditor, useSlateStatic } from '..'
-import { RenderLeafProps, RenderPlaceholderProps } from './editable'
+import type { RenderLeafProps, RenderPlaceholderProps } from './editable'
 import {
   NODE_TO_ELEMENT,
   ELEMENT_TO_NODE,
   EDITOR_TO_KEY_TO_ELEMENT,
 } from '../utils/weak-maps'
-import { isDecoratorRangeListEqual } from '../utils/range-list'
-import { IS_ANDROID } from '../utils/environment'
-import { createEffect, mergeProps } from "solid-js";
-import { useContentKey } from '../hooks/use-content-key'
+import { createEffect } from 'solid-js'
 
 /**
  * Text.
@@ -61,8 +58,6 @@ const Text = (props: {
     }
   })
 
-  const contentKey = IS_ANDROID ? useContentKey(() => props.text) : undefined
-
   return (
     <span data-slate-node="text" ref={ref}>
       {children}
@@ -70,14 +65,4 @@ const Text = (props: {
   )
 }
 
-const MemoizedText = React.memo(Text, (prev, next) => {
-  return (
-    next.parent === prev.parent &&
-    next.isLast === prev.isLast &&
-    next.renderLeaf === prev.renderLeaf &&
-    next.text === prev.text &&
-    isDecoratorRangeListEqual(next.decorations, prev.decorations)
-  )
-})
-
-export default MemoizedText
+export default Text
