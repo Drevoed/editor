@@ -1,3 +1,1 @@
-
-
-export const copyAll = () => {}
+export const copyAll = () => {};

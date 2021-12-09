@@ -2,33 +2,33 @@ import type {
   ActionBaseParams,
   ActionCallbackResult,
   ListenerConfig,
-} from './types'
+} from './types';
 
-export * from './types'
+export * from './types';
 
 interface KeyboardEventLike {
-  key: string
-  which: number
-  altKey: boolean
-  ctrlKey: boolean
-  metaKey: boolean
-  shiftKey: boolean
-  stopPropagation: () => void
-  preventDefault: () => void
+  key: string;
+  which: number;
+  altKey: boolean;
+  ctrlKey: boolean;
+  metaKey: boolean;
+  shiftKey: boolean;
+  stopPropagation: () => void;
+  preventDefault: () => void;
 }
 
 export function createActionController<
   TAction extends string = string,
   TEvent extends KeyboardEventLike = KeyboardEvent,
-  TParams extends ActionBaseParams<TEvent> = ActionBaseParams<TEvent>
+  TParams extends ActionBaseParams<TEvent> = ActionBaseParams<TEvent>,
 >() {
-  type LocalListenerConfig = ListenerConfig<TEvent, TParams>
+  type LocalListenerConfig = ListenerConfig<TEvent, TParams>;
 
-  const listeners: Map<TAction, LocalListenerConfig[]> = new Map()
+  const listeners: Map<TAction, LocalListenerConfig[]> = new Map();
 
   const register = (
     action: TAction,
-    callback: LocalListenerConfig['callback']
+    callback: LocalListenerConfig['callback'],
   ) => {
     listeners.set(action, [
       {
@@ -36,8 +36,8 @@ export function createActionController<
         callback,
         match: () => true,
       },
-    ])
-  }
+    ]);
+  };
 
   const override = (
     action: TAction,
@@ -46,46 +46,46 @@ export function createActionController<
       match = () => true,
       priority = 2,
     }: {
-      match?: LocalListenerConfig['match']
-      priority?: LocalListenerConfig['priority']
-    } = {}
+      match?: LocalListenerConfig['match'];
+      priority?: LocalListenerConfig['priority'];
+    } = {},
   ) => {
-    const listenerArray = listeners.get(action)
+    const listenerArray = listeners.get(action);
 
     if (listenerArray !== undefined) {
       listenerArray.push({
         priority,
         callback,
         match,
-      })
+      });
     }
-  }
+  };
 
   const execute = (action: TAction, params: TParams) => {
-    const configs = listeners.get(action)
-    if (!configs) return
-    const sortedByPriority = configs.sort((a, b) => b.priority - a.priority)
+    const configs = listeners.get(action);
+    if (!configs) return;
+    const sortedByPriority = configs.sort((a, b) => b.priority - a.priority);
 
     for (const config of sortedByPriority) {
-      const match = config.match(params)
-      if (!match) continue
+      const match = config.match(params);
+      if (!match) continue;
 
-      const result: ActionCallbackResult = config.callback(params) || {}
-      const { skipped = false } = result
+      const result: ActionCallbackResult = config.callback(params) || {};
+      const { skipped = false } = result;
 
-      if (skipped) continue
-      else break
+      if (skipped) continue;
+      else break;
     }
-  }
+  };
 
   const curryExecute = (action: TAction) => (params: TParams) => {
-    execute(action, params)
-  }
+    execute(action, params);
+  };
 
   return {
     register,
     override,
     execute,
     curryExecute,
-  }
+  };
 }

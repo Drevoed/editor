@@ -1,25 +1,25 @@
-import { useEditor } from '../../../lib/hooks/slate'
-import { useUI } from '../../../lib/hooks/use-ui'
-import { Action, NoopEvents } from '@cardbox-editor/core'
-import { ToolbarButton } from './common'
-import React, { CSSProperties, MouseEventHandler, ReactNode } from 'react'
-import { Editor, Text } from 'slate'
-import { ActionsRegistry } from "../../../registries/actions";
+import { Action, NoopEvents } from '@cardbox-editor/core';
+import React, { CSSProperties, MouseEventHandler, ReactNode } from 'react';
+import { Editor, Text } from 'slate';
+import { useUI } from '../../../lib/hooks/use-ui';
+import { useEditor } from '../../../lib/hooks/slate';
+import { ActionsRegistry } from '../../../registries/actions';
+import { ToolbarButton } from './common';
 
-type Mark = keyof Omit<Text, 'text'>
+type Mark = keyof Omit<Text, 'text'>;
 
 function hasMark(editor: Editor, mark: Mark) {
-  const marks = Editor.marks(editor)
-  if (!marks) return false
-  return Boolean(marks[mark])
+  const marks = Editor.marks(editor);
+  if (!marks) return false;
+  return Boolean(marks[mark]);
 }
 
 interface Props {
-  mark: Mark
-  icon: ReactNode
-  action: Action
-  tooltip?: string
-  style?: CSSProperties
+  mark: Mark;
+  icon: ReactNode;
+  action: Action;
+  tooltip?: string;
+  style?: CSSProperties;
 }
 
 export const ToolbarMarkButton = ({
@@ -29,19 +29,19 @@ export const ToolbarMarkButton = ({
   tooltip,
   style = {},
 }: Props) => {
-  const editor = useEditor()
-  const isActive = hasMark(editor, mark)
-  const ui = useUI()
+  const editor = useEditor();
+  const isActive = hasMark(editor, mark);
+  const ui = useUI();
 
   const handleClick: MouseEventHandler = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     ActionsRegistry.execute(action, {
       editor,
       event: NoopEvents.keyboard(),
       ui,
-    })
-  }
+    });
+  };
 
   return (
     <ToolbarButton
@@ -51,5 +51,5 @@ export const ToolbarMarkButton = ({
       onClick={handleClick}
       style={style}
     />
-  )
-}
+  );
+};

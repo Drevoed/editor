@@ -1,15 +1,15 @@
-export type AnyEvent = Event | ClipboardEvent
+export type AnyEvent = Event | ClipboardEvent;
 
 export interface BaseListenerParams<TEvent extends AnyEvent> {
-  event: TEvent
+  event: TEvent;
 }
 
 interface Command {
-  continue: boolean
+  continue: boolean;
 }
 
 export type ChildListener<TParams extends BaseListenerParams<AnyEvent>> = (
-  params: TParams
-) => Command | void
+  params: TParams,
+) => Command | void;
 
-export type Listener<TEvent extends AnyEvent> = (event: TEvent) => void
+export type Listener<TEvent extends AnyEvent> = (event: TEvent) => void;

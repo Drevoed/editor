@@ -1,12 +1,12 @@
-import { Element } from 'slate'
+import { Element } from 'slate';
 
 export interface BlockMeta {
-  empty: boolean
+  empty: boolean;
 }
 
 export interface ControlsState {
-  element: Element
-  meta: BlockMeta
-  active: boolean
-  setActive: (active: boolean) => void
+  element: Element;
+  meta: BlockMeta;
+  active: boolean;
+  setActive: (active: boolean) => void;
 }

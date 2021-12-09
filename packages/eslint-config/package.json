@@ -1,0 +1,15 @@
+{
+  "name": "@cardbox-editor/eslint-config",
+  "main": "eslint-preset.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@eslint-kit/eslint-config-base": "^4.0.0",
+    "@eslint-kit/eslint-config-patch": "^1.0.0",
+    "@eslint-kit/eslint-config-prettier": "^3.0.0",
+    "@eslint-kit/eslint-config-typescript": "^5.0.1",
+    "eslint": "7.32.0"
+  },
+  "files": [
+    "eslint-preset.js"
+  ]
+}

@@ -1,1 +1,1 @@
-export const deleteBackward = () => {}
+export const deleteBackward = () => {};

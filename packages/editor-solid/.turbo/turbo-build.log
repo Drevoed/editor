@@ -1,0 +1,1466 @@
+
+> @cardbox-editor/editor-solid@1.0.0 build /home/miron/WebstormProjects/editor/packages/editor-solid
+> rollup --config rollup.config.ts --configPlugin=typescript
+
+ ELIFECYCLE  Command failed with exit code 1.
+[1mloaded rollup.config.ts with warnings[22m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'slate-solid' or its corresponding type declarations.[39m[22m
+[1msrc/editor/editable-editor.tsx: (1:33)[22m
+[90m
+[7m1[0m import { Editable, Slate } from 'slate-solid'
+[7m [0m [91m                                ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/index.ts: (2:34)[22m
+[90m
+[7m2[0m import type { SolidEditor } from 'slate-solid'
+[7m [0m [91m                                 ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/editor-context/index.ts: (3:34)[22m
+[90m
+[7m3[0m import type { SolidEditor } from 'slate-solid'
+[7m [0m [91m                                 ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/hooks/slate/use-editor-node-ref.ts: (3:29)[22m
+[90m
+[7m3[0m import { SolidEditor } from 'slate-solid'
+[7m [0m [91m                            ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/hooks/slate/use-path.ts: (3:29)[22m
+[90m
+[7m3[0m import { SolidEditor } from 'slate-solid'
+[7m [0m [91m                            ~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module '@cardbox-editor/core' or its corresponding type declarations.[39m[22m
+[1msrc/editor/editable-editor.tsx: (7:40)[22m
+[90m
+[7m7[0m import { createParagraphElement } from '@cardbox-editor/core'
+[7m [0m [91m                                       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/editor.tsx: (1:33)[22m
+[90m
+[7m1[0m import { registerActions } from '@cardbox-editor/core'
+[7m [0m [91m                                ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/render.element.tsx: (23:34)[22m
+[90m
+[7m23[0m import type { ElementType } from '@cardbox-editor/core'
+[7m  [0m [91m                                 ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/render.leaf.tsx: (1:49)[22m
+[90m
+[7m1[0m import { TextModification, GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                                                ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/types.ts: (5:8)[22m
+[90m
+[7m5[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/use-extended-editor.ts: (14:8)[22m
+[90m
+[7m14[0m } from '@cardbox-editor/core'
+[7m  [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/use-keybinds.ts: (9:8)[22m
+[90m
+[7m9[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/copy-all.ts: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/exit-block.ts: (8:8)[22m
+[90m
+[7m8[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/indent.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/index.ts: (1:31)[22m
+[90m
+[7m1[0m import { GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-exit-break.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-soft-break.ts: (4:51)[22m
+[90m
+[7m4[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/outdent.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/decorations/prism.ts: (4:32)[22m
+[90m
+[7m4[0m import type { Decorator } from '@cardbox-editor/core'
+[7m [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/decorations/prism.ts: (5:47)[22m
+[90m
+[7m5[0m import { GlobalMatchers, GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code-line.tsx: (3:58)[22m
+[90m
+[7m3[0m import { CODE_MODIFICATION, createCodeLineElement } from '@cardbox-editor/core'
+[7m [0m [91m                                                         ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code.tsx: (3:54)[22m
+[90m
+[7m3[0m import { CODE_MODIFICATION, createCodeElement } from '@cardbox-editor/core'
+[7m [0m [91m                                                     ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/transforms/insert-exit-break.ts: (2:47)[22m
+[90m
+[7m2[0m import { GlobalMatchers, GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-1.tsx: (1:39)[22m
+[90m
+[7m1[0m import { createHeading1Element } from '@cardbox-editor/core'
+[7m [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-2.tsx: (3:39)[22m
+[90m
+[7m3[0m import { createHeading2Element } from '@cardbox-editor/core'
+[7m [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-3.tsx: (3:39)[22m
+[90m
+[7m3[0m import { createHeading3Element } from '@cardbox-editor/core'
+[7m [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (15:41)[22m
+[90m
+[7m15[0m import { GlobalTransforms, REGEX } from "@cardbox-editor/core";
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/delete-backward.ts: (1:51)[22m
+[90m
+[7m1[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent-paragraph.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent.ts: (4:51)[22m
+[90m
+[7m4[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/index.ts: (1:31)[22m
+[90m
+[7m1[0m import { GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/insert-exit-break.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/outdent.ts: (2:51)[22m
+[90m
+[7m2[0m import type { ActionCallback, ActionParams } from '@cardbox-editor/core'
+[7m [0m [91m                                                  ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/list-item.tsx: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/list.tsx: (6:8)[22m
+[90m
+[7m6[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/ordered-list.tsx: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/unordered-list.tsx: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/queries/info.ts: (1:47)[22m
+[90m
+[7m1[0m import { GlobalMatchers, GlobalQueries } from '@cardbox-editor/core'
+[7m [0m [91m                                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/transforms/delete-backward.ts: (3:47)[22m
+[90m
+[7m3[0m import { GlobalMatchers, GlobalQueries } from "@cardbox-editor/core";
+[7m [0m [91m                                              ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/transforms/indent-paragraph.ts: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/listeners/use-listeners.ts: (7:8)[22m
+[90m
+[7m7[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/paragraph/elements/paragraph.tsx: (5:8)[22m
+[90m
+[7m5[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/modification.tsx: (3:36)[22m
+[90m
+[7m3[0m import { Action, NoopEvents } from '@cardbox-editor/core'
+[7m [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/registries/actions/index.ts: (5:8)[22m
+[90m
+[7m5[0m } from '@cardbox-editor/core'
+[7m [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/registries/decorations/index.ts: (8:44)[22m
+[90m
+[7m8[0m import { createDecorationController } from '@cardbox-editor/core'
+[7m [0m [91m                                           ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/registries/keybinds/index.ts: (1:41)[22m
+[90m
+[7m1[0m import { createKeybindController } from '@cardbox-editor/core'
+[7m [0m [91m                                        ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/registries/settings/index.ts: (1:32)[22m
+[90m
+[7m1[0m import { createRegistry } from '@cardbox-editor/core'
+[7m [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/registries/settings/registry.ts: (1:32)[22m
+[90m
+[7m1[0m import { createRegistry } from '@cardbox-editor/core'
+[7m [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2304: Cannot find name 'useCallback'.[39m[22m
+[1msrc/editor/editable-editor.tsx: (24:29)[22m
+[90m
+[7m24[0m   const handlePasteNative = useCallback(
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2315: Type 'ClipboardEvent' is not generic.[39m[22m
+[1msrc/editor/editable-editor.tsx: (25:9)[22m
+[90m
+[7m25[0m     (e: ClipboardEvent<HTMLDivElement>) => {
+[7m  [0m [91m        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2304: Cannot find name 'useEffect'.[39m[22m
+[1msrc/editor/editable-editor.tsx: (31:3)[22m
+[90m
+[7m31[0m   useEffect(() => {
+[7m  [0m [91m  ~~~~~~~~~[0m
+[39m
+[1msrc/features/code/controls/index.tsx: (36:3)[22m
+[90m
+[7m36[0m   useEffect(() => {
+[7m  [0m [91m  ~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'string' is not assignable to type 'never'.[39m[22m
+[1msrc/editor/editable-editor.tsx: (65:13)[22m
+[90m
+[7m65[0m             mark="bold"
+[7m  [0m [91m            ~~~~[0m
+
+  [96msrc/features/toolbar/buttons/modification.tsx[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   mark: Mark
+    [7m  [0m [96m  ~~~~[0m
+    The expected type comes from property 'mark' which is declared here on type 'IntrinsicAttributes & Props'
+[39m
+[1msrc/editor/editable-editor.tsx: (72:13)[22m
+[90m
+[7m72[0m             mark="italic"
+[7m  [0m [91m            ~~~~[0m
+
+  [96msrc/features/toolbar/buttons/modification.tsx[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   mark: Mark
+    [7m  [0m [96m  ~~~~[0m
+    The expected type comes from property 'mark' which is declared here on type 'IntrinsicAttributes & Props'
+[39m
+[1msrc/editor/editable-editor.tsx: (79:13)[22m
+[90m
+[7m79[0m             mark="underlined"
+[7m  [0m [91m            ~~~~[0m
+
+  [96msrc/features/toolbar/buttons/modification.tsx[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   mark: Mark
+    [7m  [0m [96m  ~~~~[0m
+    The expected type comes from property 'mark' which is declared here on type 'IntrinsicAttributes & Props'
+[39m
+[1msrc/editor/editable-editor.tsx: (86:13)[22m
+[90m
+[7m86[0m             mark="inlineCode"
+[7m  [0m [91m            ~~~~[0m
+
+  [96msrc/features/toolbar/buttons/modification.tsx[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   mark: Mark
+    [7m  [0m [96m  ~~~~[0m
+    The expected type comes from property 'mark' which is declared here on type 'IntrinsicAttributes & Props'
+[39m
+[1msrc/editor/editable-editor.tsx: (111:13)[22m
+[90m
+[7m111[0m             mark="href"
+[7m   [0m [91m            ~~~~[0m
+
+  [96msrc/features/toolbar/buttons/modification.tsx[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   mark: Mark
+    [7m  [0m [96m  ~~~~[0m
+    The expected type comes from property 'mark' which is declared here on type 'IntrinsicAttributes & Props'
+[39m
+[1msrc/features/list/transforms/insert-exit-break.ts: (36:5)[22m
+[90m
+[7m36[0m     type: 'list-item',
+[7m  [0m [91m    ~~~~[0m
+[39m
+[1msrc/features/list/transforms/insert-exit-break.ts: (37:18)[22m
+[90m
+[7m37[0m     children: [{ type: 'paragraph', children: [{ text: '' }] }],
+[7m  [0m [91m                 ~~~~[0m
+[39m
+[1msrc/features/list/transforms/insert-exit-break.ts: (37:50)[22m
+[90m
+[7m37[0m     children: [{ type: 'paragraph', children: [{ text: '' }] }],
+[7m  [0m [91m                                                 ~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '{ children: Element[]; xmlns: string; className: string; width: string; height: string; viewBox: string; strokeWidth: string; stroke: string; fill: string; strokeLinecap: string; strokeLinejoin: string; }' is not assignable to type 'SvgSVGAttributes<SVGSVGElement>'.
+  Property 'strokeWidth' does not exist on type 'SvgSVGAttributes<SVGSVGElement>'. Did you mean '"stroke-width"'?[39m[22m
+[1msrc/editor/editable-editor.tsx: (94:17)[22m
+[90m
+[7m94[0m                 strokeWidth="2"
+[7m  [0m [91m                ~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'react' or its corresponding type declarations.[39m[22m
+[1msrc/editor/editor.tsx: (5:19)[22m
+[90m
+[7m5[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/editor/readonly-editor.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/editor/render.element.tsx: (20:19)[22m
+[90m
+[7m20[0m import React from 'react'
+[7m  [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/editor/render.leaf.tsx: (2:48)[22m
+[90m
+[7m2[0m import React, { ReactElement, ReactHTML } from 'react'
+[7m [0m [91m                                               ~~~~~~~[0m
+[39m
+[1msrc/editor/root-provider.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/editor/use-extended-editor.ts: (1:25)[22m
+[90m
+[7m1[0m import { useMemo } from 'react'
+[7m [0m [91m                        ~~~~~~~[0m
+[39m
+[1msrc/editor/use-keybinds.ts: (3:47)[22m
+[90m
+[7m3[0m import React, { useCallback, useEffect } from 'react'
+[7m [0m [91m                                              ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/copy-all.ts: (8:24)[22m
+[90m
+[7m8[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/exit-block.ts: (9:24)[22m
+[90m
+[7m9[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/indent.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-exit-break.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-soft-break.ts: (2:24)[22m
+[90m
+[7m2[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/actions/outdent.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code-line.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-1.tsx: (2:19)[22m
+[90m
+[7m2[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-2.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-3.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (8:32)[22m
+[90m
+[7m8[0m import React, { useMemo } from 'react'
+[7m [0m [91m                               ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (6:33)[22m
+[90m
+[7m6[0m import React, { useState } from 'react'
+[7m [0m [91m                                ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/menu.tsx: (5:19)[22m
+[90m
+[7m5[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/shared.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (8:32)[22m
+[90m
+[7m8[0m import React, { useMemo } from 'react'
+[7m [0m [91m                               ~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/controls/controls.tsx: (5:33)[22m
+[90m
+[7m5[0m import React, { useState } from 'react'
+[7m [0m [91m                                ~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup-context.ts: (2:61)[22m
+[90m
+[7m2[0m import { createContext, useContext, useRef, useState } from 'react'
+[7m [0m [91m                                                            ~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (7:8)[22m
+[90m
+[7m7[0m } from 'react'
+[7m [0m [91m       ~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/delete-backward.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent-paragraph.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent.ts: (2:24)[22m
+[90m
+[7m2[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/insert-exit-break.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/list/actions/outdent.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/list-item.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/ordered-list.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/unordered-list.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/paragraph/elements/paragraph.tsx: (7:19)[22m
+[90m
+[7m7[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/common.tsx: (4:56)[22m
+[90m
+[7m4[0m import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+[7m [0m [91m                                                       ~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/modification.tsx: (5:68)[22m
+[90m
+[7m5[0m import React, { CSSProperties, MouseEventHandler, ReactNode } from 'react'
+[7m [0m [91m                                                                   ~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar-context.ts: (2:51)[22m
+[90m
+[7m2[0m import { createContext, useContext, useRef } from 'react'
+[7m [0m [91m                                                  ~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar.tsx: (7:54)[22m
+[90m
+[7m7[0m import React, { ReactNode, useEffect, useMemo } from 'react'
+[7m [0m [91m                                                     ~~~~~~~[0m
+[39m
+[1msrc/global-styles/index.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/lib/hooks/use-debounced.ts: (2:25)[22m
+[90m
+[7m2[0m import { useMemo } from 'react'
+[7m [0m [91m                        ~~~~~~~[0m
+[39m
+[1msrc/lib/hooks/use-force-update.ts: (1:28)[22m
+[90m
+[7m1[0m import { useReducer } from 'react'
+[7m [0m [91m                           ~~~~~~~[0m
+[39m
+[1msrc/lib/hooks/use-throttled.ts: (1:25)[22m
+[90m
+[7m1[0m import { useMemo } from 'react'
+[7m [0m [91m                        ~~~~~~~[0m
+[39m
+[1msrc/lib/prism/styles/index.tsx: (2:19)[22m
+[90m
+[7m2[0m import React from "react";
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/lib/tippy/styles/index.tsx: (5:19)[22m
+[90m
+[7m5[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1msrc/registries/actions/index.ts: (7:24)[22m
+[90m
+[7m7[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/registries/keybinds/index.ts: (3:24)[22m
+[90m
+[7m3[0m import type React from 'react'
+[7m [0m [91m                       ~~~~~~~[0m
+[39m
+[1msrc/ui/icons.tsx: (1:19)[22m
+[90m
+[7m1[0m import React from 'react'
+[7m [0m [91m                  ~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'Element' is not assignable to type 'Element | Element[]'.[39m[22m
+[1msrc/editor/editor.tsx: (30:56)[22m
+[90m
+[7m30[0m   return <RootProvider editor={normalizedProps.editor}>{editor}</RootProvider>
+[7m  [0m [91m                                                       ~~~~~~~~[0m
+
+  [96msrc/editor/root-provider.tsx[0m:[93m12[0m:[93m3[0m
+    [7m12[0m   children: JSX.Element | JSX.Element[]
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes & { children: Element | Element[]; editor: any; }'
+[39m
+[1msrc/editor/render.element.tsx: (97:23)[22m
+[90m
+[7m97[0m         render={() => <BlockMenu sections={[CodeControls]} />}
+[7m  [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/features/left-controls/controls/controls.tsx[0m:[93m11[0m:[93m11[0m
+    [7m11[0m   render: () => JSX.Element | JSX.Element[]
+    [7m  [0m [96m          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from the return type of this signature.
+[39m
+[1msrc/features/code/controls/index.tsx: (46:9)[22m
+[90m
+[7m 46[0m         <InputWrapper>
+[7m   [0m [91m        ~~~~~~~~~~~~~~[0m
+[7m 47[0m           <Icon>{searchIcon}</Icon>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m 52[0m           />
+[7m   [0m [91m~~~~~~~~~~~~[0m
+[7m 53[0m         </InputWrapper>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/features/left-controls/block-menu/shared.tsx[0m:[93m3[0m:[93m36[0m
+    [7m3[0m const Container = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
+    [7m [0m [96m                                   ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes & { children: Element | Element[]; }'
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (90:7)[22m
+[90m
+[7m90[0m       <BlockMenuContent.List>{variants}</BlockMenuContent.List>
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/features/left-controls/block-menu/shared.tsx[0m:[93m12[0m:[93m3[0m
+    [7m12[0m   children: JSX.Element | JSX.Element[]
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes & { name: string; children: Element | Element[]; }'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'slate-react' or its corresponding type declarations.[39m[22m
+[1msrc/editor/readonly-editor.tsx: (2:33)[22m
+[90m
+[7m2[0m import { Editable, Slate } from 'slate-react'
+[7m [0m [91m                                ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/render.element.tsx: (22:62)[22m
+[90m
+[7m22[0m import { ReactEditor, RenderElementProps, useReadOnly } from 'slate-react'
+[7m  [0m [91m                                                             ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/render.leaf.tsx: (3:38)[22m
+[90m
+[7m3[0m import type { RenderLeafProps } from 'slate-react'
+[7m [0m [91m                                     ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/root-provider.tsx: (6:34)[22m
+[90m
+[7m6[0m import type { ReactEditor } from 'slate-react'
+[7m [0m [91m                                 ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/editor/use-extended-editor.ts: (4:27)[22m
+[90m
+[7m4[0m import { withReact } from 'slate-react'
+[7m [0m [91m                          ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code-line.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/elements/code.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-1.tsx: (3:41)[22m
+[90m
+[7m3[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-2.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/headings/elements/heading-3.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (10:29)[22m
+[90m
+[7m10[0m import { ReactEditor } from 'slate-react'
+[7m  [0m [91m                            ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (10:29)[22m
+[90m
+[7m10[0m import { ReactEditor } from 'slate-react'
+[7m  [0m [91m                            ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/controls/controls.tsx: (7:42)[22m
+[90m
+[7m7[0m import { useReadOnly, useSelected } from 'slate-react'
+[7m [0m [91m                                         ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/list-item.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/ordered-list.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/list/elements/unordered-list.tsx: (2:41)[22m
+[90m
+[7m2[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/paragraph/elements/paragraph.tsx: (6:41)[22m
+[90m
+[7m6[0m import type { RenderElementProps } from 'slate-react'
+[7m [0m [91m                                        ~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'clsx' or its corresponding type declarations.[39m[22m
+[1msrc/editor/render.element.tsx: (19:18)[22m
+[90m
+[7m19[0m import clsx from 'clsx'
+[7m  [0m [91m                 ~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (5:18)[22m
+[90m
+[7m5[0m import clsx from 'clsx'
+[7m [0m [91m                 ~~~~~~[0m
+[39m
+[1msrc/features/left-controls/controls/controls.tsx: (4:18)[22m
+[90m
+[7m4[0m import clsx from 'clsx'
+[7m [0m [91m                 ~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '({ attributes, children, }: RenderElementProps) => JSX.Element' is not assignable to type '(props: RenderElementProps) => Element'.
+  Type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element' is not assignable to type 'JSX.Element'.[39m[22m
+[1msrc/editor/render.element.tsx: (30:3)[22m
+[90m
+[7m30[0m   'paragraph': ParagraphComponent,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'paragraph' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (31:3)[22m
+[90m
+[7m31[0m   'heading-1': Heading1Component,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'heading-1' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (32:3)[22m
+[90m
+[7m32[0m   'heading-2': Heading2Component,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'heading-2' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (33:3)[22m
+[90m
+[7m33[0m   'heading-3': Heading3Component,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'heading-3' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (34:3)[22m
+[90m
+[7m34[0m   'ordered-list': OrderedListComponent,
+[7m  [0m [91m  ~~~~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'ordered-list' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (35:3)[22m
+[90m
+[7m35[0m   'unordered-list': UnorderedListComponent,
+[7m  [0m [91m  ~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'unordered-list' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (36:3)[22m
+[90m
+[7m36[0m   'list-item': ListItemComponent,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'list-item' which is declared here on type 'ElementComponentMapper'
+[39m
+[1msrc/editor/render.element.tsx: (38:3)[22m
+[90m
+[7m38[0m   'code-line': CodeLineComponent,
+[7m  [0m [91m  ~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'code-line' which is declared here on type 'ElementComponentMapper'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '({ element, attributes, children, }: RenderElementProps) => JSX.Element' is not assignable to type '(props: RenderElementProps) => Element'.
+  Type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element' is not assignable to type 'JSX.Element'.[39m[22m
+[1msrc/editor/render.element.tsx: (37:3)[22m
+[90m
+[7m37[0m   'code': CodeComponent,
+[7m  [0m [91m  ~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m25[0m:[93m31[0m
+    [7m25[0m type ElementComponentMapper = {
+    [7m  [0m [96m                              ~[0m
+    [7m26[0m   [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
+    [7m  [0m [96m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    [7m27[0m }
+    [7m  [0m [96m~[0m
+    The expected type comes from property 'code' which is declared here on type 'ElementComponentMapper'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2786: 'Component' cannot be used as a JSX component.
+  Its return type 'JSX.Element' is not a valid JSX element.[39m[22m
+[1msrc/editor/render.element.tsx: (56:23)[22m
+[90m
+[7m56[0m   const elementJSX = <Component {...props} />
+[7m  [0m [91m                      ~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element' is not assignable to type 'JSX.Element'.[39m[22m
+[1msrc/editor/render.element.tsx: (75:47)[22m
+[90m
+[7m75[0m   return <FirstLevelElement element={element}>{elementJSX}</FirstLevelElement>
+[7m  [0m [91m                                              ~~~~~~~~~~~~[0m
+
+  [96msrc/editor/render.element.tsx[0m:[93m83[0m:[93m3[0m
+    [7m83[0m   children: JSX.Element
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes & { element: BaseElement; children: Element; }'
+[39m
+[1msrc/features/code/controls/index.tsx: (45:7)[22m
+[90m
+[7m 45[0m       <BlockMenuContent.Container>
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m 46[0m         <InputWrapper>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m 53[0m         </InputWrapper>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m 54[0m       </BlockMenuContent.Container>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/code/controls/index.tsx: (55:7)[22m
+[90m
+[7m 55[0m       <BlockMenuContent.List style={{ maxHeight: 200, overflow: 'auto' }}>
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m 56[0m         {matchedLanguages.map((language) => {
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m 67[0m         })}
+[7m   [0m [91m~~~~~~~~~~~[0m
+[7m 68[0m       </BlockMenuContent.List>
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (21:42)[22m
+[90m
+[7m 21[0m const PlusSvg: SvgComponent = (props) => (
+[7m   [0m [91m                                         ~[0m
+[7m 22[0m   <svg
+[7m   [0m [91m~~~~~~[0m
+[7m...[0m 
+[7m 39[0m   </svg>
+[7m   [0m [91m~~~~~~~~[0m
+[7m 40[0m )
+[7m   [0m [91m~[0m
+
+  [96msrc/features/left-controls/block-menu/types.ts[0m:[93m1[0m:[93m28[0m
+    [7m1[0m export type SvgComponent = (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+    [7m [0m [96m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from the return type of this signature.
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (21:43)[22m
+[90m
+[7m 21[0m const ArrowSvg: SvgComponent = (props) => (
+[7m   [0m [91m                                          ~[0m
+[7m 22[0m   <svg
+[7m   [0m [91m~~~~~~[0m
+[7m...[0m 
+[7m 38[0m   </svg>
+[7m   [0m [91m~~~~~~~~[0m
+[7m 39[0m )
+[7m   [0m [91m~[0m
+
+  [96msrc/features/left-controls/block-menu/types.ts[0m:[93m1[0m:[93m28[0m
+    [7m1[0m export type SvgComponent = (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+    [7m [0m [96m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from the return type of this signature.
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'JSX.Element' is not assignable to type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element'.[39m[22m
+[1msrc/editor/render.element.tsx: (101:9)[22m
+[90m
+[7m101[0m         {children}
+[7m   [0m [91m        ~~~~~~~~~~[0m
+
+  [96m../../node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx.d.ts[0m:[93m19[0m:[93m13[0m
+    [7m19[0m   interface ArrayElement extends Array<Element> {}
+    [7m  [0m [96m            ~~~~~~~~~~~~[0m
+    The expected type comes from property '1' which is declared here on type 'ArrayElement'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'Element | Element[] | undefined' is not assignable to type 'Element'.
+  Type 'JSX.Element' is not assignable to type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element'.[39m[22m
+[1msrc/editor/render.element.tsx: (122:7)[22m
+[90m
+[7m122[0m       {children}
+[7m   [0m [91m      ~~~~~~~~~~[0m
+
+  [96m../../node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx.d.ts[0m:[93m80[0m:[93m5[0m
+    [7m80[0m     children?: Element;
+    [7m  [0m [96m    ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'HTMLAttributes<HTMLDivElement>'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'styled-components' or its corresponding type declarations.[39m[22m
+[1msrc/editor/styles.ts: (1:43)[22m
+[90m
+[7m1[0m import styled, { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                          ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/styles.ts: (1:20)[22m
+[90m
+[7m1[0m import styled from 'styled-components'
+[7m [0m [91m                   ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/styles.ts: (1:20)[22m
+[90m
+[7m1[0m import styled from 'styled-components'
+[7m [0m [91m                   ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/prism/styles/nord.theme.ts: (1:35)[22m
+[90m
+[7m1[0m import { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/tippy/styles/dark.theme.ts: (1:35)[22m
+[90m
+[7m1[0m import { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/tippy/styles/editor.theme.ts: (1:35)[22m
+[90m
+[7m1[0m import { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/tippy/styles/elements.themes.ts: (1:35)[22m
+[90m
+[7m1[0m import { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/lib/tippy/styles/light.theme.ts: (1:35)[22m
+[90m
+[7m1[0m import { createGlobalStyle } from 'styled-components'
+[7m [0m [91m                                  ~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'block' implicitly has an 'any' type.[39m[22m
+[1msrc/editor/use-extended-editor.ts: (28:21)[22m
+[90m
+[7m28[0m       transform: ({ block }) => {
+[7m  [0m [91m                    ~~~~~[0m
+[39m
+[1msrc/editor/use-extended-editor.ts: (43:21)[22m
+[90m
+[7m43[0m       transform: ({ block }) => {
+[7m  [0m [91m                    ~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7006: Parameter 'editor' implicitly has an 'any' type.[39m[22m
+[1msrc/editor/use-keybinds.ts: (56:33)[22m
+[90m
+[7m56[0m         keybinds.register(key, (editor, event) => {
+[7m  [0m [91m                                ~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7006: Parameter 'event' implicitly has an 'any' type.[39m[22m
+[1msrc/editor/use-keybinds.ts: (56:41)[22m
+[90m
+[7m56[0m         keybinds.register(key, (editor, event) => {
+[7m  [0m [91m                                        ~~~~~[0m
+[39m
+[1msrc/features/code/controls/index.tsx: (51:24)[22m
+[90m
+[7m51[0m             onChange={(event) => setSearch(event.target.value)}
+[7m  [0m [91m                       ~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/modification.tsx: (36:43)[22m
+[90m
+[7m36[0m   const handleClick: MouseEventHandler = (event) => {
+[7m  [0m [91m                                          ~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'editor' implicitly has an 'any' type.[39m[22m
+[1msrc/features/code/actions/copy-all.ts: (13:8)[22m
+[90m
+[7m13[0m > = ({ editor, event }) => {
+[7m  [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/code/actions/exit-block.ts: (14:8)[22m
+[90m
+[7m14[0m > = ({ editor, event }) => {
+[7m  [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/code/actions/indent.ts: (9:15)[22m
+[90m
+[7m9[0m > = ({ event, editor }) => {
+[7m [0m [91m              ~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-exit-break.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-soft-break.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/code/actions/outdent.ts: (9:15)[22m
+[90m
+[7m9[0m > = ({ event, editor }) => {
+[7m [0m [91m              ~~~~~~[0m
+[39m
+[1msrc/features/list/actions/delete-backward.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent-paragraph.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/list/actions/insert-exit-break.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1msrc/features/list/actions/outdent.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m       ~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'event' implicitly has an 'any' type.[39m[22m
+[1msrc/features/code/actions/copy-all.ts: (13:16)[22m
+[90m
+[7m13[0m > = ({ editor, event }) => {
+[7m  [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/code/actions/exit-block.ts: (14:16)[22m
+[90m
+[7m14[0m > = ({ editor, event }) => {
+[7m  [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/code/actions/indent.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ event, editor }) => {
+[7m [0m [91m       ~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-exit-break.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/code/actions/insert-soft-break.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/code/actions/outdent.ts: (9:8)[22m
+[90m
+[7m9[0m > = ({ event, editor }) => {
+[7m [0m [91m       ~~~~~[0m
+[39m
+[1msrc/features/list/actions/delete-backward.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent-paragraph.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/list/actions/indent.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/list/actions/insert-exit-break.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1msrc/features/list/actions/outdent.ts: (9:16)[22m
+[90m
+[7m9[0m > = ({ editor, event }) => {
+[7m [0m [91m               ~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '(props: VisibilityControl) => Element' is not assignable to type 'BlockMenuSection'.
+  Type 'Element' is not assignable to type 'Element | null'.
+    Type 'undefined' is not assignable to type 'Element | null'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (12:14)[22m
+[90m
+[7m12[0m export const CodeControls: BlockMenuSection = (props) => {
+[7m  [0m [91m             ~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2339: Property 'type' does not exist on type 'BaseElement'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (14:15)[22m
+[90m
+[7m14[0m   if (element.type !== 'code') return null
+[7m  [0m [91m              ~~~~[0m
+[39m
+[1msrc/features/code/controls/index.tsx: (41:15)[22m
+[90m
+[7m41[0m   if (element.type !== 'code') return null
+[7m  [0m [91m              ~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (61:49)[22m
+[90m
+[7m61[0m   const settings = SettingsRegistry.get(element.type)
+[7m  [0m [91m                                                ~~~~[0m
+[39m
+[1msrc/features/list/queries/info.ts: (126:20)[22m
+[90m
+[7m126[0m     if (first.node.type !== 'paragraph') return false
+[7m   [0m [91m                   ~~~~[0m
+[39m
+[1msrc/features/list/transforms/indent.ts: (25:32)[22m
+[90m
+[7m25[0m     { type: lists.current.node.type, children: [] },
+[7m  [0m [91m                               ~~~~[0m
+[39m
+[1msrc/features/list/transforms/outdent.ts: (49:39)[22m
+[90m
+[7m49[0m         type: info.lists.current.node.type,
+[7m  [0m [91m                                      ~~~~[0m
+[39m
+[1msrc/registries/settings/index.ts: (6:11)[22m
+[90m
+[7m6[0m   Element['type'],
+[7m [0m [91m          ~~~~~~[0m
+[39m
+[1msrc/registries/settings/registry.ts: (6:11)[22m
+[90m
+[7m6[0m   Element['type'],
+[7m [0m [91m          ~~~~~~[0m
+[39m
+[1msrc/registries/settings/types.ts: (4:26)[22m
+[90m
+[7m4[0m   readonly type: Element['type']
+[7m [0m [91m                         ~~~~~~[0m
+[39m
+[1msrc/registries/settings/types.ts: (24:44)[22m
+[90m
+[7m24[0m   readonly allowedTransformations: Element['type'][]
+[7m  [0m [91m                                           ~~~~~~[0m
+[39m
+[1msrc/shared/types/index.ts: (3:35)[22m
+[90m
+[7m3[0m export type ElementType = Element['type']
+[7m [0m [91m                                  ~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2786: 'Content' cannot be used as a JSX component.
+  Its return type 'Element | null' is not a valid JSX element.[39m[22m
+[1msrc/features/code/controls/index.tsx: (15:11)[22m
+[90m
+[7m15[0m   return <Content {...props} />
+[7m  [0m [91m          ~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '({ hide }: VisibilityControl) => Element' is not assignable to type 'BlockMenuSection'.
+  Type 'Element' is not assignable to type 'Element | null'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (18:7)[22m
+[90m
+[7m18[0m const Content: BlockMenuSection = ({ hide }) => {
+[7m  [0m [91m      ~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2304: Cannot find name 'useRef'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (22:21)[22m
+[90m
+[7m22[0m   const searchRef = useRef<HTMLInputElement | null>(null)
+[7m  [0m [91m                    ~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2304: Cannot find name 'useState'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (23:31)[22m
+[90m
+[7m23[0m   const [search, setSearch] = useState('')
+[7m  [0m [91m                              ~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2345: Argument of type '{ language: string; }' is not assignable to parameter of type 'Partial<Node>'.
+  Object literal may only specify known properties, and 'language' does not exist in type 'Partial<Node>'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (26:35)[22m
+[90m
+[7m26[0m     Transforms.setNodes(editor, { language }, { at: path })
+[7m  [0m [91m                                  ~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2304: Cannot find name 'useMemo'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (30:28)[22m
+[90m
+[7m30[0m   const matchedLanguages = useMemo(() => {
+[7m  [0m [91m                           ~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7006: Parameter 'language' implicitly has an 'any' type.[39m[22m
+[1msrc/features/code/controls/index.tsx: (56:32)[22m
+[90m
+[7m56[0m         {matchedLanguages.map((language) => {
+[7m  [0m [91m                               ~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2339: Property 'language' does not exist on type 'BaseElement'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (57:63)[22m
+[90m
+[7m57[0m           const isSelected = language.grammarName === element.language
+[7m  [0m [91m                                                              ~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2339: Property 'div' does not exist on type 'typeof import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-styled-components@0.27.3_solid-js@1.2.6/node_modules/solid-styled-components/src/index")'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (73:36)[22m
+[90m
+[7m73[0m export const InputWrapper = styled.div`
+[7m  [0m [91m                                   ~~~[0m
+[39m
+[1msrc/features/code/controls/index.tsx: (85:21)[22m
+[90m
+[7m85[0m const Icon = styled.div`
+[7m  [0m [91m                    ~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '{ children: Element; preserveAspectRatio: "xMidYMid meet"; height: string; width: string; fill: string; xmlns: string; viewBox: string; strokeWidth: string; strokeLinecap: string; strokeLinejoin: string; stroke: string; className: string; }' is not assignable to type 'SvgSVGAttributes<SVGSVGElement>'.
+  Property 'strokeWidth' does not exist on type 'SvgSVGAttributes<SVGSVGElement>'. Did you mean '"stroke-width"'?[39m[22m
+[1msrc/features/code/controls/index.tsx: (106:5)[22m
+[90m
+[7m106[0m     strokeWidth="2"
+[7m   [0m [91m    ~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2339: Property 'input' does not exist on type 'typeof import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-styled-components@0.27.3_solid-js@1.2.6/node_modules/solid-styled-components/src/index")'.[39m[22m
+[1msrc/features/code/controls/index.tsx: (119:29)[22m
+[90m
+[7m119[0m export const Input = styled.input`
+[7m   [0m [91m                            ~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module 'prismjs' or its corresponding type declarations.[39m[22m
+[1msrc/features/code/decorations/prism.ts: (2:19)[22m
+[90m
+[7m2[0m import Prism from 'prismjs'
+[7m [0m [91m                  ~~~~~~~~~[0m
+[39m
+[1msrc/lib/prism/index.ts: (1:19)[22m
+[90m
+[7m1[0m import Prism from 'prismjs'
+[7m [0m [91m                  ~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2345: Argument of type '{ anchor: { path: Path; offset: number; }; focus: { path: Path; offset: any; }; prismToken: any; }' is not assignable to parameter of type 'BaseRange'.
+  Object literal may only specify known properties, and 'prismToken' does not exist in type 'BaseRange'.[39m[22m
+[1msrc/features/code/decorations/prism.ts: (51:7)[22m
+[90m
+[7m51[0m       prismToken: token.type,
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2305: Module '"../../../shared/types"' has no exported member 'CodeModification'.[39m[22m
+[1msrc/features/code/leaf/index.ts: (1:15)[22m
+[90m
+[7m1[0m import type { CodeModification } from '../../../shared/types'
+[7m [0m [91m              ~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type '({ hide }: ContentProps) => JSX.Element' is not assignable to type '(props: ContentProps) => Element'.
+  Type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element' is not assignable to type 'JSX.Element'.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (16:5)[22m
+[90m
+[7m16[0m     content={AddMenuContent}
+[7m  [0m [91m    ~~~~~~~[0m
+
+  [96msrc/features/left-controls/block-menu/menu-wrapper.tsx[0m:[93m13[0m:[93m3[0m
+    [7m13[0m   content: (props: ContentProps) => JSX.Element
+    [7m  [0m [96m  ~~~~~~~[0m
+    The expected type comes from property 'content' which is declared here on type 'IntrinsicAttributes & MenuProps & MenuAdditionalProps'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'string' is not assignable to type 'SVGPreserveAspectRatio | undefined'.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (23:5)[22m
+[90m
+[7m23[0m     preserveAspectRatio="xMidYMid meet"
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96m../../node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx.d.ts[0m:[93m2645[0m:[93m5[0m
+    [7m2645[0m     preserveAspectRatio?: SVGPreserveAspectRatio;
+    [7m    [0m [96m    ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'preserveAspectRatio' which is declared here on type 'SvgSVGAttributes<SVGSVGElement>'
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (23:5)[22m
+[90m
+[7m23[0m     preserveAspectRatio="xMidYMid meet"
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96m../../node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx.d.ts[0m:[93m2645[0m:[93m5[0m
+    [7m2645[0m     preserveAspectRatio?: SVGPreserveAspectRatio;
+    [7m    [0m [96m    ~~~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'preserveAspectRatio' which is declared here on type 'SvgSVGAttributes<SVGSVGElement>'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2531: Object is possibly 'null'.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (56:5)[22m
+[90m
+[7m56[0m     editorNodeRef.current?.focus()
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/left-controls/block-menu/transform.menu.tsx: (66:5)[22m
+[90m
+[7m66[0m     editorNodeRef.current?.focus()
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (60:5)[22m
+[90m
+[7m60[0m     editorNodeRef.current?.focus()
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (67:5)[22m
+[90m
+[7m67[0m     editorNodeRef.current?.focus()
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (92:10)[22m
+[90m
+[7m92[0m     if (!editorNodeRef.current) return
+[7m  [0m [91m         ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/link/ui/link-popup.tsx: (94:30)[22m
+[90m
+[7m94[0m     instance.current = tippy(editorNodeRef.current, {
+[7m  [0m [91m                             ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar.tsx: (51:10)[22m
+[90m
+[7m51[0m     if (!editorNodeRef.current) return
+[7m  [0m [91m         ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar.tsx: (53:30)[22m
+[90m
+[7m53[0m     instance.current = tippy(editorNodeRef.current, {
+[7m  [0m [91m                             ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar.tsx: (82:12)[22m
+[90m
+[7m82[0m       if (!editorNodeRef.current) return
+[7m  [0m [91m           ~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/toolbar.tsx: (85:38)[22m
+[90m
+[7m85[0m       if (document.activeElement !== editorNodeRef.current) {
+[7m  [0m [91m                                     ~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7006: Parameter 'settings' implicitly has an 'any' type.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (61:16)[22m
+[90m
+[7m61[0m       .filter((settings) => settings.canBeAdded !== false)
+[7m  [0m [91m               ~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'type' implicitly has an 'any' type.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (62:15)[22m
+[90m
+[7m62[0m       .map(({ type, name, code }) => {
+[7m  [0m [91m              ~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'name' implicitly has an 'any' type.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (62:21)[22m
+[90m
+[7m62[0m       .map(({ type, name, code }) => {
+[7m  [0m [91m                    ~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7031: Binding element 'code' implicitly has an 'any' type.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (62:27)[22m
+[90m
+[7m62[0m       .map(({ type, name, code }) => {
+[7m  [0m [91m                          ~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'Element' is not assignable to type 'Element | Element[]'.
+  Type 'undefined' is not assignable to type 'Element | Element[]'.[39m[22m
+[1msrc/features/left-controls/block-menu/add.menu.tsx: (77:9)[22m
+[90m
+[7m77[0m         <BlockMenuContent.List>{variants}</BlockMenuContent.List>
+[7m  [0m [91m        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/features/left-controls/block-menu/shared.tsx[0m:[93m12[0m:[93m3[0m
+    [7m12[0m   children: JSX.Element | JSX.Element[]
+    [7m  [0m [96m  ~~~~~~~~[0m
+    The expected type comes from property 'children' which is declared here on type 'IntrinsicAttributes & { name: string; children: Element | Element[]; }'
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2307: Cannot find module '@tippyjs/react' or its corresponding type declarations.[39m[22m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (4:19)[22m
+[90m
+[7m4[0m import Tippy from '@tippyjs/react'
+[7m [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+[39m
+[1msrc/features/toolbar/buttons/common.tsx: (3:19)[22m
+[90m
+[7m3[0m import Tippy from '@tippyjs/react'
+[7m [0m [91m                  ~~~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS7006: Parameter 'current' implicitly has an 'any' type.[39m[22m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (30:33)[22m
+[90m
+[7m30[0m   const toggle = () => setOpen((current) => !current)
+[7m  [0m [91m                                ~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2786: 'ContentWrapper' cannot be used as a JSX component.
+  Its return type 'Element | null' is not a valid JSX element.
+    Type 'JSX.Element' is not assignable to type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element'.[39m[22m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (44:10)[22m
+[90m
+[7m44[0m         <ContentWrapper active={active}>
+[7m  [0m [91m         ~~~~~~~~~~~~~~[0m
+[39m
+[1m[33m(!) Plugin typescript: @rollup/plugin-typescript TS2322: Type 'import("/home/miron/WebstormProjects/editor/node_modules/.pnpm/solid-js@1.2.6/node_modules/solid-js/types/jsx").JSX.Element' is not assignable to type 'JSX.Element'.
+  Type 'undefined' is not assignable to type 'ReactElement<any, any>'.[39m[22m
+[1msrc/features/left-controls/block-menu/menu-wrapper.tsx: (45:11)[22m

@@ -1,7 +1,7 @@
-import React from 'react'
-import { PrismGlobalStyles } from '../lib/prism'
-import { TippyGlobalStyles } from '../lib/tippy'
-import { EditorGlobalStyles } from '../editor'
+import React from 'react';
+import { PrismGlobalStyles } from '../lib/prism';
+import { TippyGlobalStyles } from '../lib/tippy';
+import { EditorGlobalStyles } from '../editor';
 
 export const GlobalStyles = () => {
   return (
@@ -10,5 +10,5 @@ export const GlobalStyles = () => {
       <TippyGlobalStyles />
       <PrismGlobalStyles />
     </>
-  )
-}
+  );
+};

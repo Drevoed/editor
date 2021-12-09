@@ -1,12 +1,12 @@
-import type { Text } from 'slate'
+import type { Text } from 'slate';
 
 export interface CodeElement {
-  type: 'code'
-  children: CodeLineElement[]
-  language: string
+  type: 'code';
+  children: CodeLineElement[];
+  language: string;
 }
 
 export interface CodeLineElement {
-  type: 'code-line'
-  children: Text[]
+  type: 'code-line';
+  children: Text[];
 }

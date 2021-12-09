@@ -1,10 +1,10 @@
-import { useForceUpdate } from '../../../lib/hooks/use-force-update'
-import { createContext, useContext, useRef, useState } from 'react'
-import type { Range } from 'slate'
-import type { Instance } from 'tippy.js'
+import { createContext, useContext, useRef, useState } from 'react';
+import { useForceUpdate } from '../../../lib/hooks/use-force-update';
+import type { Range } from 'slate';
+import type { Instance } from 'tippy.js';
 
 export function useNewLinkPopupState() {
-  const [href, setHref] = useState('')
+  const [href, setHref] = useState('');
   return {
     instance: useRef<Instance | null>(null),
     input: useRef<HTMLInputElement | null>(null),
@@ -12,10 +12,10 @@ export function useNewLinkPopupState() {
     hadHref: useRef<boolean>(false),
     href,
     setHref,
-  }
+  };
 }
 
-export type LinkPopupState = ReturnType<typeof useNewLinkPopupState>
+export type LinkPopupState = ReturnType<typeof useNewLinkPopupState>;
 
 export const LinkPopupContext = createContext<LinkPopupState>({
   instance: { current: null },
@@ -24,51 +24,51 @@ export const LinkPopupContext = createContext<LinkPopupState>({
   hadHref: { current: false },
   href: '',
   setHref: () => {},
-})
+});
 
 export function useLinkPopupState() {
-  return useContext(LinkPopupContext)
+  return useContext(LinkPopupContext);
 }
 
 export function useLinkPopupActions() {
-  const state = useLinkPopupState()
-  const forceUpdate = useForceUpdate()
+  const state = useLinkPopupState();
+  const forceUpdate = useForceUpdate();
 
   const show = ({
     selection,
     href = '',
   }: {
-    selection: Range
-    href?: string
+    selection: Range;
+    href?: string;
   }) => {
-    if (!state.instance.current) return
-    state.selection.current = selection
-    state.instance.current.show()
+    if (!state.instance.current) return;
+    state.selection.current = selection;
+    state.instance.current.show();
     if (href) {
-      state.setHref(href)
-      state.hadHref.current = true
+      state.setHref(href);
+      state.hadHref.current = true;
     }
-  }
+  };
 
   const reset = () => {
-    state.selection.current = null
-    state.hadHref.current = false
-    state.setHref('')
-  }
+    state.selection.current = null;
+    state.hadHref.current = false;
+    state.setHref('');
+  };
 
   const hide = () => {
-    if (!state.instance.current) return
-    state.instance.current.hide()
-  }
+    if (!state.instance.current) return;
+    state.instance.current.hide();
+  };
 
   const focus = () => {
-    if (!state.input.current) return
-    state.input.current.focus()
-  }
+    if (!state.input.current) return;
+    state.input.current.focus();
+  };
 
   const update = () => {
-    forceUpdate()
-  }
+    forceUpdate();
+  };
 
   return {
     show,
@@ -76,7 +76,7 @@ export function useLinkPopupActions() {
     reset,
     focus,
     update,
-  }
+  };
 }
 
-export type LinkPopupActions = ReturnType<typeof useLinkPopupActions>
+export type LinkPopupActions = ReturnType<typeof useLinkPopupActions>;

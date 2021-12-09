@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"AAAA,OAAiC,uBAAuB,CAAA","sourcesContent":["import { TextModification } from '../../../shared/types'\n\nexport type WithTextModifications = {\n  [Modification in TextModification]?: boolean\n}\n"]}

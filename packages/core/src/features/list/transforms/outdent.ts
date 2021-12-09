@@ -1,32 +1,32 @@
-import { GlobalMatchers } from '../../../lib/global-matchers'
-import { LocalQueries } from '../queries'
-import type { FullInfo } from '../queries/info'
-import { mergeSiblings } from './merge-siblings'
-import { moveChildren } from './move-children'
-import { Editor, Location, Node, Path, Range, Transforms } from 'slate'
+import { Editor, Location, Node, Path, Range, Transforms } from 'slate';
+import { GlobalMatchers } from '../../../lib/global-matchers';
+import { LocalQueries } from '../queries';
+import { mergeSiblings } from './merge-siblings';
+import { moveChildren } from './move-children';
+import type { FullInfo } from '../queries/info';
 
 interface Options {
-  at?: Location
+  at?: Location;
 }
 
 export function outdent(editor: Editor, options: Options = {}) {
-  const { at = editor.selection } = options
-  if (!at) return
+  const { at = editor.selection } = options;
+  if (!at) return;
 
-  if (Range.isRange(at) && Range.isExpanded(at)) return
+  if (Range.isRange(at) && Range.isExpanded(at)) return;
 
-  const info = LocalQueries.info(editor, { at })
-  if (!info) return
+  const info = LocalQueries.info(editor, { at });
+  if (!info) return;
 
   if (!info.lists.above || !info.items.above) {
-    return outdentFirstLevel(editor, options, info)
+    return outdentFirstLevel(editor, options, info);
   }
 
   function isWrapperAbove(node: Node) {
-    if (!info) return false
-    const isCurrentList = node === info.lists.current.node
-    const isItemAbove = node === info.items.above?.node
-    return isCurrentList || isItemAbove
+    if (!info) return false;
+    const isCurrentList = node === info.lists.current.node;
+    const isItemAbove = node === info.items.above.node;
+    return isCurrentList || isItemAbove;
   }
 
   if (info.lists.current.node.children.length === 1) {
@@ -35,9 +35,9 @@ export function outdent(editor: Editor, options: Options = {}) {
       mode: 'all',
       split: true,
       match: isWrapperAbove,
-    })
+    });
 
-    return
+    return;
   }
 
   moveChildren(editor, {
@@ -48,16 +48,16 @@ export function outdent(editor: Editor, options: Options = {}) {
       return {
         type: info.lists.current.node.type,
         children: nodes,
-      }
+      };
     },
-  })
+  });
 
-  mergeSiblings(editor, { at: info.items.current.path })
+  mergeSiblings(editor, { at: info.items.current.path });
 
   if (info.items.current.meta.isFirst) {
-    const newInfo = LocalQueries.info(editor, { at })
-    if (!newInfo) return
-    if (!newInfo.items.above) return
+    const newInfo = LocalQueries.info(editor, { at });
+    if (!newInfo) return;
+    if (!newInfo.items.above) return;
 
     Transforms.unwrapNodes(editor, {
       at: newInfo.items.current.path,
@@ -67,24 +67,24 @@ export function outdent(editor: Editor, options: Options = {}) {
         newInfo.lists.current.node,
         newInfo.items.above.node,
       ]),
-    })
+    });
   } else {
     Transforms.moveNodes(editor, {
       at: info.items.current.path,
       to: Path.next(info.items.above.path),
-    })
+    });
   }
 
-  mergeSiblings(editor, { at: info.lists.above.path })
+  mergeSiblings(editor, { at: info.lists.above.path });
 }
 
 function outdentFirstLevel(
   editor: Editor,
   options: Options = {},
-  info: FullInfo
+  info: FullInfo,
 ) {
-  const { at = editor.selection } = options
-  if (!at) return
+  const { at = editor.selection } = options;
+  if (!at) return;
 
   Transforms.unwrapNodes(editor, {
     at: info.items.current.path,
@@ -94,9 +94,9 @@ function outdentFirstLevel(
       info.lists.current.node,
       info.items.current.node,
     ]),
-  })
+  });
 
-  mergeSiblings(editor)
+  mergeSiblings(editor);
 
   // const isSimple = info.items.current.meta.isSimple
   // const hasListInside = info.blocks.second?.meta.isList

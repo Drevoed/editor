@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"","sourcesContent":["import type { CodeModification } from '../../../shared/types'\n\nexport type WithCode = {\n  [Modification in CodeModification]?: string\n}\n"]}

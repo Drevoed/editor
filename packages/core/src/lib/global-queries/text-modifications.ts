@@ -1,5 +1,5 @@
-import type { TextModification } from '../../shared/types'
-import type { Text } from 'slate'
+import type { TextModification } from '../../shared/types';
+import type { Text } from 'slate';
 
 export function textModifications(
   leaf: Text,
@@ -8,7 +8,7 @@ export function textModifications(
     'italic',
     'underlined',
     'inlineCode',
-  ]
+  ],
 ): TextModification[] {
-  return modifications.filter((modification) => leaf[modification])
+  return modifications.filter((modification) => leaf[modification]);
 }

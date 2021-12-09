@@ -8,13 +8,31 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "lint": "eslint --fix \"./src/**/**.{ts,tsx,js,jsx,json}\"",
+    "build": "rollup --config rollup.config.js"
+  },
   "dependencies": {
     "is-hotkey": "0.2.0",
     "just-debounce-it": "^3.0.1",
     "prismjs": "^1.25.0",
     "slate": "0.71.0",
     "slate-history": "0.66.0",
-    "slate-react": "0.71.0",
     "throttleit": "^1.0.0"
+  },
+  "peerDependencies": {
+    "prismjs": ">= 1.25.0",
+    "slate": ">= 0.71.0",
+    "slate-history": ">= 0.66.0"
+  },
+  "devDependencies": {
+    "@cardbox-editor/eslint-config": "workspace:*",
+    "@cardbox-editor/prettier-config": "workspace:*",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@swc/core": "^1.2.118",
+    "rollup": "^2.61.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-swc3": "^0.1.4"
   }
 }

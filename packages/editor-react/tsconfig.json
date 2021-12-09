@@ -1,11 +1,23 @@
 {
-  "extends": "../../config/typescript/tsconfig.json",
   "include": ["src/**/*"],
   "compilerOptions": {
-    "composite": true,
-    "importsNotUsedAsValues": "error",
+    "target": "ES2021",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "importsNotUsedAsValues": "preserve",
     "rootDir": "src",
-    "declaration": true
+    "isolatedModules": true,
+    "noEmit": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "strict": false,
+    "strictNullChecks": true
   },
   "references": [{
     "path": "../core"

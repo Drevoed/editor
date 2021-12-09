@@ -1,38 +1,38 @@
-import React, { useCallback, useEffect, ClipboardEvent } from 'react'
-import { Editable, Slate } from 'slate-react'
-import { LinkPopup } from '../features/link'
-import { useListeners } from '../features/listeners'
-import { Toolbar } from '../features/toolbar'
-import { ToolbarMarkButton } from '../features/toolbar/buttons'
-import { useEditor } from '../lib/hooks/slate'
-import { createParagraphElement } from '@cardbox-editor/core'
-import { renderElement } from './render.element'
-import { renderLeaf } from './render.leaf'
-import { StyledEditor } from './styles'
-import type { EditableEditorProps } from './types'
-import { useKeybinds } from './use-keybinds'
-import { decorations } from "../registries/decorations";
+import React, { useCallback, useEffect, ClipboardEvent } from 'react';
+import { Editable, Slate } from 'slate-react';
+import { createParagraphElement } from '@cardbox-editor/core';
+import { LinkPopup } from '../features/link';
+import { useListeners } from '../features/listeners';
+import { Toolbar } from '../features/toolbar';
+import { ToolbarMarkButton } from '../features/toolbar/buttons';
+import { useEditor } from '../lib/hooks/slate';
+import { decorations } from '../registries/decorations';
+import { renderElement } from './render.element';
+import { renderLeaf } from './render.leaf';
+import { StyledEditor } from './styles';
+import { useKeybinds } from './use-keybinds';
+import type { EditableEditorProps } from './types';
 
 export const EditableEditor = ({
   value,
   onChange,
   customKeybinds,
 }: EditableEditorProps) => {
-  const editor = useEditor()
-  const { handleKeyDown } = useKeybinds(customKeybinds)
-  const { handlePaste } = useListeners()
+  const editor = useEditor();
+  const { handleKeyDown } = useKeybinds(customKeybinds);
+  const { handlePaste } = useListeners();
 
   const handlePasteNative = useCallback(
     (e: ClipboardEvent<HTMLDivElement>) => {
-      handlePaste(e.nativeEvent)
+      handlePaste(e.nativeEvent);
     },
-    [handlePaste]
-  )
+    [handlePaste],
+  );
 
   useEffect(() => {
-    if (value.length > 0) return
-    onChange([createParagraphElement()])
-  }, [value])
+    if (value.length > 0) return;
+    onChange([createParagraphElement()]);
+  }, [value]);
 
   return (
     <StyledEditor>
@@ -54,8 +54,8 @@ export const EditableEditor = ({
       <ToolbarWithButtons />
       <LinkPopup />
     </StyledEditor>
-  )
-}
+  );
+};
 
 const ToolbarWithButtons = () => {
   return (
@@ -139,5 +139,5 @@ const ToolbarWithButtons = () => {
         </>
       )}
     />
-  )
-}
+  );
+};

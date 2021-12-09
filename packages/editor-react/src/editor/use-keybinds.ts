@@ -1,56 +1,56 @@
-import { useEditor } from '../lib/hooks/slate'
-import { useUI } from '../lib/hooks/use-ui'
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react';
+import { useEditor } from '../lib/hooks/slate';
+import { useUI } from '../lib/hooks/use-ui';
+import { ActionsRegistry } from '../registries/actions';
+import { keybinds } from '../registries/keybinds';
 import type {
   Action,
   ActionKeybinds,
   OptionalActionKeybinds,
   PublicAction,
-} from '@cardbox-editor/core'
-import { ActionsRegistry } from '../registries/actions'
-import { keybinds } from '../registries/keybinds'
+} from '@cardbox-editor/core';
 
-type AllKeybinds = ActionKeybinds<Action>
+type AllKeybinds = ActionKeybinds<Action>;
 
 const defaultKeybinds: AllKeybinds = {
   'delete-backward': 'backspace',
   'insert-soft-break': 'shift+enter',
   'insert-exit-break': 'enter',
-  'indent': 'tab',
-  'outdent': 'shift+tab',
+  indent: 'tab',
+  outdent: 'shift+tab',
   'get-out-the-leaf': 'arrowright',
   'make-bold': 'mod+b',
   'make-italic': 'mod+i',
   'make-underlined': 'mod+u',
   'make-inline-code': ['mod+e', 'mod+`'],
   'set-link-for-text': 'mod+k',
-  'copy': 'mod+c',
+  copy: 'mod+c',
   'copy-all': 'mod+a',
-  'paste': 'mod+v',
+  paste: 'mod+v',
   'exit-block': 'mod+enter',
-}
+};
 
 export function useKeybinds(
-  customKeybinds: OptionalActionKeybinds<PublicAction>
+  customKeybinds: OptionalActionKeybinds<PublicAction>,
 ) {
-  const editor = useEditor()
-  const ui = useUI()
+  const editor = useEditor();
+  const ui = useUI();
 
   useEffect(() => {
     const finalKeybinds: AllKeybinds = {
       ...defaultKeybinds,
       ...customKeybinds,
-    }
+    };
 
     // clear possible previous keybinds
-    keybinds.unregisterAll()
+    keybinds.unregisterAll();
 
-    type Entries = Array<[Action, AllKeybinds[Action]]>
-    const entries = Object.entries(finalKeybinds) as Entries
+    type Entries = Array<[Action, AllKeybinds[Action]]>;
+    const entries = Object.entries(finalKeybinds) as Entries;
 
     entries.forEach(([action, keybind]) => {
-      if (!keybind) return
-      const keys = typeof keybind === 'string' ? [keybind] : keybind
+      if (!keybind) return;
+      const keys = typeof keybind === 'string' ? [keybind] : keybind;
 
       for (const key of keys) {
         keybinds.register(key, (editor, event) => {
@@ -58,18 +58,18 @@ export function useKeybinds(
             editor,
             event,
             ui,
-          })
-        })
+          });
+        });
       }
-    })
-  }, [customKeybinds])
+    });
+  }, [customKeybinds]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent) => {
-      keybinds.keyDown(event, editor)
+      keybinds.keyDown(event, editor);
     },
-    [editor]
-  )
+    [editor],
+  );
 
-  return { handleKeyDown }
+  return { handleKeyDown };
 }

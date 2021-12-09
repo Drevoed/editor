@@ -1,9 +1,9 @@
-import { Editor, Range } from 'slate'
+import { Editor, Range } from 'slate';
 
 export function hasSelection(editor: Editor): boolean {
   if (!editor.selection) {
-    return false
+    return false;
   }
 
-  return Range.isExpanded(editor.selection)
+  return Range.isExpanded(editor.selection);
 }

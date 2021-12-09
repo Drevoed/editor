@@ -1,13 +1,13 @@
-import { useEditor, useEditorNodeRef } from '../../../lib/hooks/slate'
-import { SettingsRegistry } from '../../../registries/settings'
-import type { ElementType } from '../../../shared/types'
-import { useControlsState } from '../controls'
-import { MenuWrapper } from './menu-wrapper'
-import { BlockMenuContent } from './shared'
-import type { ContentProps, MenuAdditionalProps, SvgComponent } from './types'
-import React, { useMemo } from 'react'
-import { Element, Transforms } from 'slate'
-import { ReactEditor } from 'slate-react'
+import React, { useMemo } from 'react';
+import { Element, Transforms } from 'slate';
+import { ReactEditor } from 'slate-react';
+import { useEditor, useEditorNodeRef } from '../../../lib/hooks/slate';
+import { SettingsRegistry } from '../../../registries/settings';
+import { useControlsState } from '../controls';
+import { MenuWrapper } from './menu-wrapper';
+import { BlockMenuContent } from './shared';
+import type { ElementType } from '../../../shared/types';
+import type { ContentProps, MenuAdditionalProps, SvgComponent } from './types';
 
 export const AddMenu = (props: MenuAdditionalProps) => (
   <MenuWrapper
@@ -16,7 +16,7 @@ export const AddMenu = (props: MenuAdditionalProps) => (
     content={AddMenuContent}
     {...props}
   />
-)
+);
 
 const PlusSvg: SvgComponent = (props) => (
   <svg
@@ -37,24 +37,24 @@ const PlusSvg: SvgComponent = (props) => (
       <line x1="5" y1="12" x2="19" y2="12" />
     </g>
   </svg>
-)
+);
 
 const AddMenuContent = ({ hide }: ContentProps) => {
-  const editor = useEditor()
-  const editorNodeRef = useEditorNodeRef()
-  const { element } = useControlsState()
-  const path = usePath(element)
+  const editor = useEditor();
+  const editorNodeRef = useEditorNodeRef();
+  const { element } = useControlsState();
+  const path = usePath(element);
 
   const add = (type: ElementType) => {
-    const settings = SettingsRegistry.get(type)
-    Transforms.removeNodes(editor, { at: path })
+    const settings = SettingsRegistry.get(type);
+    Transforms.removeNodes(editor, { at: path });
     Transforms.insertNodes(editor, settings.create(), {
       at: path,
       select: true,
-    })
-    hide()
-    editorNodeRef.current?.focus()
-  }
+    });
+    hide();
+    editorNodeRef.current?.focus();
+  };
 
   const variants = useMemo(() => {
     return SettingsRegistry.getAll()
@@ -67,9 +67,9 @@ const AddMenuContent = ({ hide }: ContentProps) => {
             detail={`/${code}`}
             onClick={() => add(type)}
           />
-        )
-      })
-  }, [])
+        );
+      });
+  }, []);
 
   return (
     <div className="block-menu">
@@ -77,10 +77,10 @@ const AddMenuContent = ({ hide }: ContentProps) => {
         <BlockMenuContent.List>{variants}</BlockMenuContent.List>
       </BlockMenuContent.Section>
     </div>
-  )
-}
+  );
+};
 
 function usePath(element: Element) {
-  const editor = useEditor()
-  return ReactEditor.findPath(editor, element)
+  const editor = useEditor();
+  return ReactEditor.findPath(editor, element);
 }

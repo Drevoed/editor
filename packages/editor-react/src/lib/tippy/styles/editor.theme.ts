@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const EditorTheme = createGlobalStyle`
   [data-tippy-root] {
@@ -208,4 +208,4 @@ export const EditorTheme = createGlobalStyle`
       fill: var(--background-color);
     }
   }
-`
+`;

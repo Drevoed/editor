@@ -1,19 +1,19 @@
-import React from 'react'
-import type { Editor } from 'slate'
-import { LinkPopupContext, useNewLinkPopupState } from '../features/link'
-import { ToolbarContext, useNewToolbarState } from '../features/toolbar'
-import { EditorContext } from '../lib/editor-context'
-import type { ReactEditor } from 'slate-react'
+import React from 'react';
+import { LinkPopupContext, useNewLinkPopupState } from '../features/link';
+import { ToolbarContext, useNewToolbarState } from '../features/toolbar';
+import { EditorContext } from '../lib/editor-context';
+import type { Editor } from 'slate';
+import type { ReactEditor } from 'slate-react';
 
 export const RootProvider = ({
   children,
   editor,
 }: {
-  children: JSX.Element | JSX.Element[]
-  editor: Editor & ReactEditor
+  children: JSX.Element | JSX.Element[];
+  editor: Editor & ReactEditor;
 }) => {
-  const toolbarState = useNewToolbarState()
-  const linkPopupState = useNewLinkPopupState()
+  const toolbarState = useNewToolbarState();
+  const linkPopupState = useNewLinkPopupState();
 
   return (
     <EditorContext.Provider value={editor}>
@@ -23,5 +23,5 @@ export const RootProvider = ({
         </LinkPopupContext.Provider>
       </ToolbarContext.Provider>
     </EditorContext.Provider>
-  )
-}
+  );
+};

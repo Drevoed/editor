@@ -1,16 +1,16 @@
-import type { Text } from 'slate'
+import type { Text } from 'slate';
 
 export interface Heading1Element {
-  type: 'heading-1'
-  children: Text[]
+  type: 'heading-1';
+  children: Text[];
 }
 
 export interface Heading2Element {
-  type: 'heading-2'
-  children: Text[]
+  type: 'heading-2';
+  children: Text[];
 }
 
 export interface Heading3Element {
-  type: 'heading-3'
-  children: Text[]
+  type: 'heading-3';
+  children: Text[];
 }

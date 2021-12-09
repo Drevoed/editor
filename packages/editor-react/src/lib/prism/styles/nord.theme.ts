@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const Theme = createGlobalStyle`
   /**
@@ -126,7 +126,7 @@ export const Theme = createGlobalStyle`
   .token.entity {
     cursor: help;
   }
-`
+`;
 
 export const NordLightTheme = createGlobalStyle`
   :root {
@@ -144,7 +144,7 @@ export const NordLightTheme = createGlobalStyle`
     --nord-keyword: #81A1C1;
     --nord-operator: #4C566A;
   }
-`
+`;
 
 export const NordDarkTheme = createGlobalStyle`
   :root {
@@ -161,4 +161,4 @@ export const NordDarkTheme = createGlobalStyle`
     --nord-keyword: #81A1C1;
     --nord-operator: #81A1C1;
   }
-`
+`;

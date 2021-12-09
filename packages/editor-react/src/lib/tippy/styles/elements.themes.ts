@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const ElementsThemes = createGlobalStyle`
   .tippy-box[data-theme~='editor-react-default'] .tippy-content {
@@ -59,4 +59,4 @@ export const ElementsThemes = createGlobalStyle`
       color: #A9AAB3;
     }
   }
-`
+`;

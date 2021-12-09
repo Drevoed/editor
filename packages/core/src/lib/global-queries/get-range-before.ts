@@ -1,29 +1,29 @@
-import { getPointBefore } from './get-point-before'
-import { getPointFromLocation } from './get-point-from-location'
-import type { Editor, Location, Range } from 'slate'
+import { getPointBefore } from './get-point-before';
+import { getPointFromLocation } from './get-point-from-location';
+import type { Editor, Location, Range } from 'slate';
 
 interface Options {
-  at?: Location
-  matchString: string | string[]
+  at?: Location;
+  matchString: string | string[];
 }
 
 export function getRangeBefore(
   editor: Editor,
-  options: Options
+  options: Options,
 ): Range | undefined {
-  if (!editor.selection) return
+  if (!editor.selection) return;
 
   const start = getPointBefore(editor, {
     ...options,
     edge: 'start',
-  })
-  if (!start) return
+  });
+  if (!start) return;
 
-  const end = getPointFromLocation(editor.selection)
-  if (!end) return
+  const end = getPointFromLocation(editor.selection);
+  if (!end) return;
 
   return {
     anchor: start,
     focus: end,
-  }
+  };
 }

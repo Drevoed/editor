@@ -1,38 +1,38 @@
-import { GlobalMatchers } from '../../../lib/global-matchers'
-import { GlobalQueries } from '../../../lib/global-queries'
-import { outdent } from './outdent'
-import { Editor, Range } from 'slate'
+import { Editor, Range } from 'slate';
+import { GlobalMatchers } from '../../../lib/global-matchers';
+import { GlobalQueries } from '../../../lib/global-queries';
+import { outdent } from './outdent';
 
 interface TransformResult {
-  handled: boolean
+  handled: boolean;
 }
 
 export function deleteBackward(editor: Editor): TransformResult {
-  const handled: TransformResult = { handled: true }
-  const skipped: TransformResult = { handled: false }
+  const handled: TransformResult = { handled: true };
+  const skipped: TransformResult = { handled: false };
 
   if (!editor.selection) {
-    return skipped
+    return skipped;
   }
 
   if (Range.isExpanded(editor.selection)) {
-    return skipped
+    return skipped;
   }
 
   const itemEntry = GlobalQueries.getAbove(editor, {
     type: 'block',
     mode: 'lowest',
     match: GlobalMatchers.block(editor, 'list-item'),
-  })
-  if (!itemEntry) return skipped
-  const [, itemPath] = itemEntry
+  });
+  if (!itemEntry) return skipped;
+  const [, itemPath] = itemEntry;
 
-  const [isStart] = GlobalQueries.isOnEdges(editor, { of: itemPath })
+  const [isStart] = GlobalQueries.isOnEdges(editor, { of: itemPath });
 
   if (!isStart) {
-    return skipped
+    return skipped;
   }
 
-  outdent(editor)
-  return handled
+  outdent(editor);
+  return handled;
 }

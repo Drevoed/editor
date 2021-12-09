@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,IAAI,SAAS,EAAE,MAAM,QAAQ,CAAA;AAC1C,cAAc,UAAU,CAAA;AACxB,cAAc,SAAS,CAAA","sourcesContent":["export { Menu as BlockMenu } from './menu'\nexport * from './shared'\nexport * from './types'\n"]}

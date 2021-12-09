@@ -1,16 +1,16 @@
-import { TIPPY_THEMES } from '../../../lib/tippy'
-import { useControlsState } from '../controls'
-import type { ContentProps, MenuAdditionalProps } from './types'
-import Tippy from '@tippyjs/react'
-import clsx from 'clsx'
-import React, { useState } from 'react'
+import Tippy from '@tippyjs/react';
+import clsx from 'clsx';
+import React, { useState } from 'react';
+import { TIPPY_THEMES } from '../../../lib/tippy';
+import { useControlsState } from '../controls';
+import type { ContentProps, MenuAdditionalProps } from './types';
 
-type SvgComponent = (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+type SvgComponent = (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
 
 interface MenuProps {
-  svg: SvgComponent
-  iconClassName: string
-  content: (props: ContentProps) => JSX.Element
+  svg: SvgComponent;
+  iconClassName: string;
+  content: (props: ContentProps) => JSX.Element;
 }
 
 export const MenuWrapper = ({
@@ -21,19 +21,19 @@ export const MenuWrapper = ({
   content: Content,
   sections,
 }: MenuProps & MenuAdditionalProps) => {
-  const { active, setActive } = useControlsState()
+  const { active, setActive } = useControlsState();
 
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false);
 
-  const show = () => setOpen(true)
-  const hide = () => setOpen(false)
-  const toggle = () => setOpen((current) => !current)
+  const show = () => setOpen(true);
+  const hide = () => setOpen(false);
+  const toggle = () => setOpen((current) => !current);
 
   const fullIconClass = clsx({
     'block-menu-icon': true,
     [iconClassName]: true,
-    'active': isOpen,
-  })
+    active: isOpen,
+  });
 
   return (
     <Tippy
@@ -54,16 +54,16 @@ export const MenuWrapper = ({
         <Svg />
       </div>
     </Tippy>
-  )
-}
+  );
+};
 
 const ContentWrapper = ({
   active,
   children,
 }: {
-  active: boolean
-  children: JSX.Element
+  active: boolean;
+  children: JSX.Element;
 }) => {
-  if (!active) return null
-  return children
-}
+  if (!active) return null;
+  return children;
+};

@@ -1,17 +1,17 @@
-import { GlobalMatchers } from '../../../lib/global-matchers'
-import { GlobalQueries } from '../../../lib/global-queries'
+import { Editor, Range, Transforms } from 'slate';
+import { GlobalMatchers } from '../../../lib/global-matchers';
+import { GlobalQueries } from '../../../lib/global-queries';
 import {
   createListElement,
   createListItemElement,
   ListElement,
-} from '../elements'
-import { mergeSiblings } from './merge-siblings'
-import { Editor, Range, Transforms } from 'slate'
-import type { ElementByType } from '../../../shared/types'
+} from '../elements';
+import { mergeSiblings } from './merge-siblings';
+import type { ElementByType } from '../../../shared/types';
 
 export function indentParagraph(editor: Editor) {
-  if (!editor.selection) return
-  if (Range.isExpanded(editor.selection)) return
+  if (!editor.selection) return;
+  if (Range.isExpanded(editor.selection)) return;
 
   const paragraphEntry = GlobalQueries.getAbove<ElementByType<'paragraph'>>(
     editor,
@@ -19,39 +19,41 @@ export function indentParagraph(editor: Editor) {
       type: 'block',
       mode: 'lowest',
       match: GlobalMatchers.block(editor, 'paragraph'),
-    }
-  )
-  if (!paragraphEntry) return
-  const [, paragraphPath] = paragraphEntry
+    },
+  );
+  if (!paragraphEntry) return;
+  const [, paragraphPath] = paragraphEntry;
 
   const getNearestListType = (): ListElement['type'] => {
-    const beforeEntry = Editor.previous(editor, { at: paragraphPath })
-    const afterEntry = Editor.next(editor, { at: paragraphPath })
+    const beforeEntry = Editor.previous(editor, { at: paragraphPath });
+    const afterEntry = Editor.next(editor, { at: paragraphPath });
 
     const isList = GlobalMatchers.block(editor, [
       'ordered-list',
       'unordered-list',
-    ])
+    ]);
 
     if (beforeEntry) {
-      const element = beforeEntry[0]
-      if (isList(element)) return element.type as ListElement['type']
+      const element = beforeEntry[0];
+      if (isList(element)) return element.type as ListElement['type'];
     }
 
     if (afterEntry) {
-      const element = afterEntry[0]
-      if (isList(element)) return element.type as ListElement['type']
+      const element = afterEntry[0];
+      if (isList(element)) return element.type as ListElement['type'];
     }
 
-    return 'unordered-list'
-  }
+    return 'unordered-list';
+  };
 
-  Transforms.wrapNodes(editor, createListItemElement([]), { at: paragraphPath })
+  Transforms.wrapNodes(editor, createListItemElement([]), {
+    at: paragraphPath,
+  });
 
-  const type = getNearestListType()
+  const type = getNearestListType();
   Transforms.wrapNodes(editor, createListElement(type, []), {
     at: paragraphPath,
-  })
+  });
 
-  mergeSiblings(editor)
+  mergeSiblings(editor);
 }

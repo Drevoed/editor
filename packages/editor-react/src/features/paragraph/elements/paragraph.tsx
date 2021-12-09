@@ -2,17 +2,17 @@ import {
   LINK_MODIFICATION,
   TEXT_MODIFICATIONS,
   createParagraphElement,
-} from '@cardbox-editor/core'
-import type { RenderElementProps } from 'slate-react'
-import React from 'react'
-import { SettingsRegistry } from "../../../registries/settings";
+} from '@cardbox-editor/core';
+import React from 'react';
+import { SettingsRegistry } from '../../../registries/settings';
+import type { RenderElementProps } from 'slate-react';
 
 export const ParagraphComponent = ({
   attributes,
   children,
 }: RenderElementProps) => {
-  return <p {...attributes}>{children}</p>
-}
+  return <p {...attributes}>{children}</p>;
+};
 
 SettingsRegistry.set('paragraph', {
   type: 'paragraph',
@@ -22,4 +22,4 @@ SettingsRegistry.set('paragraph', {
   allowedModifications: [...TEXT_MODIFICATIONS, LINK_MODIFICATION],
   allowedTransformations: ['heading-1', 'heading-2', 'heading-3'],
   create: createParagraphElement,
-})
+});

@@ -1,6 +1,6 @@
-import type { Text } from 'slate'
+import type { Text } from 'slate';
 
 export interface ParagraphElement {
-  type: 'paragraph'
-  children: Text[]
+  type: 'paragraph';
+  children: Text[];
 }

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Icon = styled.span`
   display: flex;
@@ -6,7 +6,7 @@ export const Icon = styled.span`
   justify-content: center;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
-`
+`;
 
 export const Container = styled.button`
   display: flex;
@@ -28,4 +28,4 @@ export const Container = styled.button`
   &[data-active='true'] ${Icon} {
     color: white;
   }
-`
+`;

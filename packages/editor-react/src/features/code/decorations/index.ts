@@ -1,4 +1,4 @@
-import { decorations } from '../../../registries/decorations'
-import { prism } from './prism'
+import { decorations } from '../../../registries/decorations';
+import { prism } from './prism';
 
-decorations.register(prism)
+decorations.register(prism);

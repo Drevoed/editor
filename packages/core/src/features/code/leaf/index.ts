@@ -1,5 +1,5 @@
-import type { CodeModification } from '../../../shared/types'
+import type { CodeModification } from '../../../shared/types';
 
 export type WithCode = {
-  [Modification in CodeModification]?: string
-}
+  [Modification in CodeModification]?: string;
+};

@@ -1,5 +1,5 @@
-import { TextModification } from '../../../shared/types'
+import { TextModification } from '../../../shared/types';
 
 export type WithTextModifications = {
-  [Modification in TextModification]?: boolean
-}
+  [Modification in TextModification]?: boolean;
+};

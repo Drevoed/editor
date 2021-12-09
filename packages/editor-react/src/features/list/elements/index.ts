@@ -1,4 +1,3 @@
-export * from './list-item'
-export * from './ordered-list'
-export * from './unordered-list'
-export * from './list'
+export * from './list-item';
+export * from './ordered-list';
+export * from './unordered-list';

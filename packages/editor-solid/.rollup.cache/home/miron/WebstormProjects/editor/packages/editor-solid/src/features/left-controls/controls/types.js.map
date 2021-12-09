@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","sourceRoot":"","sources":["types.ts"],"names":[],"mappings":"AAAA,OAAwB,OAAO,CAAA","sourcesContent":["import { Element } from 'slate'\n\nexport interface BlockMeta {\n  empty: boolean\n}\n\nexport interface ControlsState {\n  element: Element\n  meta: BlockMeta\n  active: boolean\n  setActive: (active: boolean) => void\n}\n"]}

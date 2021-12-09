@@ -1,62 +1,62 @@
+import clsx from 'clsx';
+import React from 'react';
+import { ReactEditor, RenderElementProps, useReadOnly } from 'slate-react';
 import {
   CodeComponent,
   CodeControls,
   CodeLineComponent,
-} from '../features/code'
+} from '../features/code';
 import {
   Heading1Component,
   Heading2Component,
   Heading3Component,
-} from '../features/headings'
-import { BlockMenu, Controls } from '../features/left-controls'
+} from '../features/headings';
+import { BlockMenu, Controls } from '../features/left-controls';
 import {
   ListItemComponent,
   OrderedListComponent,
   UnorderedListComponent,
-} from '../features/list'
-import { ParagraphComponent } from '../features/paragraph'
-import { useEditor } from '../lib/hooks/slate'
-import clsx from 'clsx'
-import React from 'react'
-import type { Element } from 'slate'
-import { ReactEditor, RenderElementProps, useReadOnly } from 'slate-react'
-import type { ElementType } from '@cardbox-editor/core'
+} from '../features/list';
+import { ParagraphComponent } from '../features/paragraph';
+import { useEditor } from '../lib/hooks/slate';
+import type { Element } from 'slate';
+import type { ElementType } from '@cardbox-editor/core';
 
 type ElementComponentMapper = {
-  [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element
-}
+  [KElementType in ElementType]: (props: RenderElementProps) => JSX.Element;
+};
 
 const ELEMENT_COMPONENT_MAPPER: ElementComponentMapper = {
-  'paragraph': ParagraphComponent,
+  paragraph: ParagraphComponent,
   'heading-1': Heading1Component,
   'heading-2': Heading2Component,
   'heading-3': Heading3Component,
   'ordered-list': OrderedListComponent,
   'unordered-list': UnorderedListComponent,
   'list-item': ListItemComponent,
-  'code': CodeComponent,
+  code: CodeComponent,
   'code-line': CodeLineComponent,
-}
+};
 
 export function renderElement({ children, ...rest }: RenderElementProps) {
-  return <ElementStructure {...rest}>{children}</ElementStructure>
+  return <ElementStructure {...rest}>{children}</ElementStructure>;
 }
 
 function usePath(element: Element) {
-  const editor = useEditor()
-  return ReactEditor.findPath(editor, element)
+  const editor = useEditor();
+  return ReactEditor.findPath(editor, element);
 }
 
 const ElementStructure = (props: RenderElementProps) => {
-  const { element } = props
-  const Component = ELEMENT_COMPONENT_MAPPER[element.type]
-  const path = usePath(element)
-  const isNested = path.length > 1
+  const { element } = props;
+  const Component = ELEMENT_COMPONENT_MAPPER[element.type];
+  const path = usePath(element);
+  const isNested = path.length > 1;
 
-  const elementJSX = <Component {...props} />
+  const elementJSX = <Component {...props} />;
 
   if (element.type === 'code-line') {
-    return elementJSX
+    return elementJSX;
   }
 
   if (isNested) {
@@ -69,26 +69,26 @@ const ElementStructure = (props: RenderElementProps) => {
           <Area position="bottom" />
         </div>
       </div>
-    )
+    );
   }
 
-  return <FirstLevelElement element={element}>{elementJSX}</FirstLevelElement>
-}
+  return <FirstLevelElement element={element}>{elementJSX}</FirstLevelElement>;
+};
 
 const FirstLevelElement = ({
   element,
   children,
 }: {
-  element: Element
-  children: JSX.Element
+  element: Element;
+  children: JSX.Element;
 }) => {
-  const readOnly = useReadOnly()
+  const readOnly = useReadOnly();
 
   const containerClass = clsx({
     'element-container': true,
     'first-level': true,
     'read-only': readOnly,
-  })
+  });
 
   return (
     <div className={containerClass}>
@@ -102,24 +102,24 @@ const FirstLevelElement = ({
         <Area position="bottom" />
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Area = ({
   position,
   children,
 }: {
-  position: 'top' | 'bottom'
-  children?: JSX.Element | JSX.Element[]
+  position: 'top' | 'bottom';
+  children?: JSX.Element | JSX.Element[];
 }) => {
   const className = clsx({
     'element-area': true,
     ['element-area-' + position]: true,
-  })
+  });
 
   return (
     <div contentEditable={false} className={className}>
       {children}
     </div>
-  )
-}
+  );
+};

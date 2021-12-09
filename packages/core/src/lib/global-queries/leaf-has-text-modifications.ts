@@ -1,5 +1,5 @@
-import type { TextModification } from '../../shared/types'
-import type { Text } from 'slate'
+import type { TextModification } from '../../shared/types';
+import type { Text } from 'slate';
 
 export function leafHasTextModifications(
   leaf: Text,
@@ -8,7 +8,7 @@ export function leafHasTextModifications(
     'italic',
     'underlined',
     'inlineCode',
-  ]
+  ],
 ): boolean {
-  return modifications.some((modification) => leaf[modification])
+  return modifications.some((modification) => leaf[modification]);
 }

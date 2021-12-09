@@ -1,8 +1,8 @@
-import { block } from './block'
-import { builder } from './builder'
-import { childOf } from './child-of'
-import { equals } from './equals'
-import { notEquals } from './not-equals'
+import { block } from './block';
+import { builder } from './builder';
+import { childOf } from './child-of';
+import { equals } from './equals';
+import { notEquals } from './not-equals';
 
 export const GlobalMatchers = {
   builder,
@@ -10,4 +10,4 @@ export const GlobalMatchers = {
   equals,
   notEquals,
   childOf,
-}
+};

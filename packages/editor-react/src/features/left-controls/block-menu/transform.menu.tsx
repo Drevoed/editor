@@ -1,13 +1,13 @@
-import { useEditor, useEditorNodeRef } from '../../../lib/hooks/slate'
-import { SettingsRegistry } from '../../../registries/settings'
-import type { ElementType } from '../../../shared/types'
-import { useControlsState } from '../controls'
-import { MenuWrapper } from './menu-wrapper'
-import { BlockMenuContent } from './shared'
-import type { ContentProps, MenuAdditionalProps, SvgComponent } from './types'
-import React, { useMemo } from 'react'
-import { Element, Transforms } from 'slate'
-import { ReactEditor } from 'slate-react'
+import React, { useMemo } from 'react';
+import { Element, Transforms } from 'slate';
+import { ReactEditor } from 'slate-react';
+import { useEditor, useEditorNodeRef } from '../../../lib/hooks/slate';
+import { SettingsRegistry } from '../../../registries/settings';
+import { useControlsState } from '../controls';
+import { MenuWrapper } from './menu-wrapper';
+import { BlockMenuContent } from './shared';
+import type { ElementType } from '../../../shared/types';
+import type { ContentProps, MenuAdditionalProps, SvgComponent } from './types';
 
 export const TransformMenu = (props: MenuAdditionalProps) => (
   <MenuWrapper
@@ -16,7 +16,7 @@ export const TransformMenu = (props: MenuAdditionalProps) => (
     content={TransformMenuContent}
     {...props}
   />
-)
+);
 
 const ArrowSvg: SvgComponent = (props) => (
   <svg
@@ -36,39 +36,39 @@ const ArrowSvg: SvgComponent = (props) => (
       <polyline points="6 9 12 15 18 9" />
     </g>
   </svg>
-)
+);
 
 const TransformMenuContent = (props: ContentProps) => {
-  const { sections = [] } = props
+  const { sections = [] } = props;
 
   return (
     <div className="block-menu">
       <Transformations {...props} />
       {sections.map((section, index) => {
-        const Section = section
+        const Section = section;
         // eslint-disable-next-line react/no-array-index-key
-        return <Section key={index} {...props} />
+        return <Section key={index} {...props} />;
       })}
     </div>
-  )
-}
+  );
+};
 
 const Transformations = ({ hide }: ContentProps) => {
-  const editor = useEditor()
-  const editorNodeRef = useEditorNodeRef()
-  const { element } = useControlsState()
-  const path = usePath(element)
-  const settings = SettingsRegistry.get(element.type)
+  const editor = useEditor();
+  const editorNodeRef = useEditorNodeRef();
+  const { element } = useControlsState();
+  const path = usePath(element);
+  const settings = SettingsRegistry.get(element.type);
 
   const transform = (type: ElementType) => {
-    Transforms.setNodes(editor, { type }, { at: path })
-    hide()
-    editorNodeRef.current?.focus()
-  }
+    Transforms.setNodes(editor, { type }, { at: path });
+    hide();
+    editorNodeRef.current?.focus();
+  };
 
   const variants = useMemo(() => {
     return settings.allowedTransformations.map((type) => {
-      const { name, code } = SettingsRegistry.get(type)
+      const { name, code } = SettingsRegistry.get(type);
 
       return (
         <BlockMenuContent.Item
@@ -77,22 +77,22 @@ const Transformations = ({ hide }: ContentProps) => {
           detail={`/${code}`}
           onClick={() => transform(type)}
         />
-      )
-    })
-  }, [settings])
+      );
+    });
+  }, [settings]);
 
   if (variants.length === 0) {
-    return null
+    return null;
   }
 
   return (
     <BlockMenuContent.Section name="Select item type">
       <BlockMenuContent.List>{variants}</BlockMenuContent.List>
     </BlockMenuContent.Section>
-  )
-}
+  );
+};
 
 function usePath(element: Element) {
-  const editor = useEditor()
-  return ReactEditor.findPath(editor, element)
+  const editor = useEditor();
+  return ReactEditor.findPath(editor, element);
 }

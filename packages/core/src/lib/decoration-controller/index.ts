@@ -1,26 +1,26 @@
-import type { Editor, NodeEntry, Range } from 'slate'
+import type { Editor, NodeEntry, Range } from 'slate';
 
-export type Decorator = (editor: Editor, entry: NodeEntry) => Range[]
+export type Decorator = (editor: Editor, entry: NodeEntry) => Range[];
 
 export function createDecorationController() {
-  const decorators: Decorator[] = []
+  const decorators: Decorator[] = [];
 
   const register = (decorator: Decorator) => {
-    decorators.push(decorator)
-  }
+    decorators.push(decorator);
+  };
 
   const createHandler = (editor: Editor) => (entry: NodeEntry) => {
     for (const decorator of decorators) {
-      const decorationResult = decorator(editor, entry)
-      if (decorationResult.length === 0) continue
-      return decorationResult
+      const decorationResult = decorator(editor, entry);
+      if (decorationResult.length === 0) continue;
+      return decorationResult;
     }
 
-    return []
-  }
+    return [];
+  };
 
   return {
     register,
     createHandler,
-  }
+  };
 }

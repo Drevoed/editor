@@ -1,12 +1,12 @@
-import { TIPPY_THEMES } from '../../../lib/tippy'
-import { Container, Icon } from './styles'
-import Tippy from '@tippyjs/react'
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import Tippy from '@tippyjs/react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
+import { TIPPY_THEMES } from '../../../lib/tippy';
+import { Container, Icon } from './styles';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: ReactNode
-  isActive: boolean
-  tooltip?: string
+  icon: ReactNode;
+  isActive: boolean;
+  tooltip?: string;
 }
 
 export const ToolbarButton = ({
@@ -20,7 +20,7 @@ export const ToolbarButton = ({
     <Container data-active={isActive} {...rest}>
       <Icon style={style}>{icon}</Icon>
     </Container>
-  )
+  );
 
   if (tooltip) {
     return (
@@ -32,8 +32,8 @@ export const ToolbarButton = ({
       >
         {pure}
       </Tippy>
-    )
+    );
   }
 
-  return pure
-}
+  return pure;
+};

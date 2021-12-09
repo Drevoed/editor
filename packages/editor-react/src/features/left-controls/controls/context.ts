@@ -1,10 +1,10 @@
-import type { ControlsState } from './types'
-import { createContext, useContext } from 'react'
+import { createContext, useContext } from 'react';
+import type { ControlsState } from './types';
 
-const ControlsContext = createContext<ControlsState>({} as ControlsState)
+const ControlsContext = createContext<ControlsState>({} as ControlsState);
 
-export const ControlsProvider = ControlsContext.Provider
+export const ControlsProvider = ControlsContext.Provider;
 
 export function useControlsState() {
-  return useContext(ControlsContext)
+  return useContext(ControlsContext);
 }

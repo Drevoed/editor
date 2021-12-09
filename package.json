@@ -1,47 +1,23 @@
 {
-  "name": "@cardbox-editor/packages",
+  "name": "@cardbox-editor/turborepo",
   "private": true,
-  "scripts": {
-    "build": "rollup --config ./config/rollup/rollup.config.js"
-  },
-  "dependencies": {
-    "@cardbox-editor/editor-react": "workspace:*",
-    "@cardbox-editor/core": "workspace:*",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "slate": "^0.72.0"
-  },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
-    "@eslint-kit/eslint-config-base": "^5.0.2",
-    "@eslint-kit/eslint-config-patch": "^1.0.0",
-    "@eslint-kit/eslint-config-prettier": "^4.0.0",
-    "@eslint-kit/eslint-config-typescript": "^5.1.0",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
-    "@types/babel__core": "^7.1.17",
-    "@types/prismjs": "^1.16.6",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "@types/styled-components": "^5.1.17",
-    "@types/throttleit": "^1.0.0",
-    "@typescript-eslint/parser": "^5.6.0",
-    "@vitejs/plugin-react-refresh": "^1.3.6",
-    "babel-preset-solid": "^1.2.5",
-    "eslint": "7.32.0",
-    "install-peers": "^1.0.3",
-    "prettier": "^2.5.1",
-    "rollup": "^2.60.2",
-    "rollup-plugin-dts": "^4.0.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.31.1",
-    "solid-js": "^1.2.5",
-    "typescript": "^4.5.2",
-    "vite": "^2.7.0",
-    "vite-plugin-solid": "^2.1.3"
+    "turbo": "^1.0.2"
+  },
+  "turbo": {
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "lint": {
+        "outputs": []
+      }
+    }
   }
 }

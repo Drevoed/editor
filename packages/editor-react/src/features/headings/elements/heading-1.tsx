@@ -1,14 +1,14 @@
-import { createHeading1Element } from '@cardbox-editor/core'
-import React from 'react'
-import type { RenderElementProps } from 'slate-react'
-import { SettingsRegistry } from "../../../registries/settings";
+import { createHeading1Element } from '@cardbox-editor/core';
+import React from 'react';
+import { SettingsRegistry } from '../../../registries/settings';
+import type { RenderElementProps } from 'slate-react';
 
 export const Heading1Component = ({
   attributes,
   children,
 }: RenderElementProps) => {
-  return <h1 {...attributes}>{children}</h1>
-}
+  return <h1 {...attributes}>{children}</h1>;
+};
 
 SettingsRegistry.set('heading-1', {
   type: 'heading-1',
@@ -18,4 +18,4 @@ SettingsRegistry.set('heading-1', {
   allowedModifications: [],
   allowedTransformations: ['heading-2', 'heading-3', 'paragraph'],
   create: createHeading1Element,
-})
+});

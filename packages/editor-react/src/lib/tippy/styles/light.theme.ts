@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const LightTheme = createGlobalStyle`
   .tippy-box[data-theme~='editor-react-light'] {
@@ -8,4 +8,4 @@ export const LightTheme = createGlobalStyle`
 
     box-shadow: 0px 2px 3px #F2F3F5;
   }
-`
+`;

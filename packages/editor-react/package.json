@@ -11,29 +11,46 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "lint": "eslint --fix \"./src/**/**.{ts,tsx,js,jsx,json}\""
+  },
   "dependencies": {
     "@cardbox-editor/core": "workspace:*",
+    "@tippyjs/react": "^4.2.6",
+    "clsx": "^1.1.1",
+    "just-debounce-it": "^3.0.1",
+    "prismjs": "^1.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "tippy.js": "^6.3.7",
-    "@tippyjs/react": "^4.2.6",
-    "slate-react": "^0.71.0",
-    "slate-history": "^0.66.0",
     "slate": "^0.71.0",
-    "clsx": "^1.1.1",
-    "styled-components": "^5.3.3"
+    "slate-history": "^0.66.0",
+    "slate-react": "^0.71.0",
+    "styled-components": "^5.3.3",
+    "throttleit": "^1.0.0",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "@cardbox-editor/eslint-config": "workspace:*",
+    "@cardbox-editor/prettier-config": "workspace:*",
+    "@eslint-kit/eslint-config-react": "^3.0.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.17",
+    "@types/throttleit": "^1.0.0",
+    "rollup": "^2.61.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-swc3": "^0.1.4"
   },
   "peerDependencies": {
-    "@cardbox-editor/core": "workspace:*",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "tippy.js": "^6.3.7",
-    "@tippyjs/react": "^4.2.6",
-    "slate-react": "^0.71.0",
-    "slate-history": "^0.66.0",
-    "slate": "^0.71.0",
-    "clsx": "^1.1.1",
-    "styled-components": "^5.3.3"
+    "react": ">= 17.0.2",
+    "react-dom": ">= 17.0.2",
+    "slate": ">= 0.71.0",
+    "slate-history": ">= 0.66.0",
+    "slate-react": ">= 0.71.0",
+    "styled-components": ">= 5.3.3"
   },
   "license": "MIT"
 }

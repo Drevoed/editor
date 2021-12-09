@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const LinkIconSvg = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -23,8 +23,8 @@ export const LinkIconSvg = (props: React.SVGProps<SVGSVGElement>) => {
         fill="currentColor"
       />
     </svg>
-  )
-}
+  );
+};
 
 export const ClearIconSvg = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -41,5 +41,5 @@ export const ClearIconSvg = (props: React.SVGProps<SVGSVGElement>) => {
         fill="currentColor"
       />
     </svg>
-  )
-}
+  );
+};

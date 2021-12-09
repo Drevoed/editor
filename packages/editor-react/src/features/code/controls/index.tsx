@@ -1,44 +1,44 @@
-import { useEditor, usePath } from '../../../lib/hooks/slate'
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Transforms } from 'slate';
+import styled from 'styled-components';
+import { useEditor, usePath } from '../../../lib/hooks/slate';
 import {
   BlockMenuContent,
   BlockMenuSection,
   useControlsState,
-} from '../../left-controls'
-import { PRISM_LANGUAGES } from '../constants'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { Transforms } from 'slate'
-import styled from 'styled-components'
+} from '../../left-controls';
+import { PRISM_LANGUAGES } from '../constants';
 
 export const CodeControls: BlockMenuSection = (props) => {
-  const { element } = useControlsState()
-  if (element.type !== 'code') return null
-  return <Content {...props} />
-}
+  const { element } = useControlsState();
+  if (element.type !== 'code') return null;
+  return <Content {...props} />;
+};
 
 const Content: BlockMenuSection = ({ hide }) => {
-  const editor = useEditor()
-  const { element } = useControlsState()
-  const path = usePath(element)
-  const searchRef = useRef<HTMLInputElement | null>(null)
-  const [search, setSearch] = useState('')
+  const editor = useEditor();
+  const { element } = useControlsState();
+  const path = usePath(element);
+  const searchRef = useRef<HTMLInputElement | null>(null);
+  const [search, setSearch] = useState('');
 
   const setLanguage = (language: string) => {
-    Transforms.setNodes(editor, { language }, { at: path })
-    hide()
-  }
+    Transforms.setNodes(editor, { language }, { at: path });
+    hide();
+  };
 
   const matchedLanguages = useMemo(() => {
     return PRISM_LANGUAGES.filter((language) => {
-      return language.name.toLowerCase().includes(search.toLowerCase())
-    })
-  }, [search])
+      return language.name.toLowerCase().includes(search.toLowerCase());
+    });
+  }, [search]);
 
   useEffect(() => {
-    if (!searchRef.current) return
-    searchRef.current.focus()
-  }, [])
+    if (!searchRef.current) return;
+    searchRef.current.focus();
+  }, []);
 
-  if (element.type !== 'code') return null
+  if (element.type !== 'code') return null;
 
   return (
     <BlockMenuContent.Section name="Select code language">
@@ -54,7 +54,7 @@ const Content: BlockMenuSection = ({ hide }) => {
       </BlockMenuContent.Container>
       <BlockMenuContent.List style={{ maxHeight: 200, overflow: 'auto' }}>
         {matchedLanguages.map((language) => {
-          const isSelected = language.grammarName === element.language
+          const isSelected = language.grammarName === element.language;
 
           return (
             <BlockMenuContent.Item
@@ -63,12 +63,12 @@ const Content: BlockMenuSection = ({ hide }) => {
               onClick={() => setLanguage(language.grammarName)}
               style={{ color: isSelected ? 'rgb(56, 132, 255)' : '' }}
             />
-          )
+          );
         })}
       </BlockMenuContent.List>
     </BlockMenuContent.Section>
-  )
-}
+  );
+};
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ export const InputWrapper = styled.div`
   &:focus-within {
     border-color: #6494e2;
   }
-`
+`;
 
 const Icon = styled.div`
   display: flex;
@@ -93,7 +93,7 @@ const Icon = styled.div`
     width: 16px;
     height: 16px;
   }
-`
+`;
 
 export const searchIcon = (
   <svg
@@ -114,7 +114,7 @@ export const searchIcon = (
       <line x1="21" y1="21" x2="15.8" y2="15.8" />
     </g>
   </svg>
-)
+);
 
 export const Input = styled.input`
   width: 100%;
@@ -126,4 +126,4 @@ export const Input = styled.input`
   background: transparent;
   outline: none;
   color: #1a1a23;
-`
+`;

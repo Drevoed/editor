@@ -1,5 +1,5 @@
-import { NordLightTheme, Theme } from './nord.theme'
-import React from "react";
+import React from 'react';
+import { NordLightTheme, Theme } from './nord.theme';
 
 export const GlobalStyles = () => {
   return (
@@ -8,5 +8,5 @@ export const GlobalStyles = () => {
       {/*<NordDarkTheme />*/}
       <NordLightTheme />
     </>
-  )
-}
+  );
+};

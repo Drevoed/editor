@@ -1,3 +1,1 @@
-
-
-export const exitBlock = () => {}
+export const exitBlock = () => {};

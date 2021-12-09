@@ -1,7 +1,7 @@
-import { useMemo } from 'react'
-import { createEditor, Text } from 'slate'
-import { withHistory } from 'slate-history'
-import { withReact } from 'slate-react'
+import { useMemo } from 'react';
+import { createEditor, Text } from 'slate';
+import { withHistory } from 'slate-history';
+import { withReact } from 'slate-react';
 import {
   createCodeElement,
   createListItemElement,
@@ -11,7 +11,7 @@ import {
   extend,
   Extension,
   extensions,
-} from '@cardbox-editor/core'
+} from '@cardbox-editor/core';
 
 const defaultExtensions: Extension[] = [
   withReact,
@@ -26,11 +26,11 @@ const defaultExtensions: Extension[] = [
       onlyOnBlockStart: true,
       transformType: 'block',
       transform: ({ block }) => {
-        const initialLeafs = (block.children as unknown[]).filter(Text.isText)
-        if (initialLeafs.length === 0) return createUnorderedListElement()
+        const initialLeafs = (block.children as unknown[]).filter(Text.isText);
+        if (initialLeafs.length === 0) return createUnorderedListElement();
         return createUnorderedListElement([
           createListItemElement([createParagraphElement(initialLeafs)]),
-        ])
+        ]);
       },
     },
     {
@@ -41,11 +41,11 @@ const defaultExtensions: Extension[] = [
       onlyOnBlockStart: true,
       transformType: 'block',
       transform: ({ block }) => {
-        const initialLeafs = (block.children as unknown[]).filter(Text.isText)
-        if (initialLeafs.length === 0) return createOrderedListElement()
+        const initialLeafs = (block.children as unknown[]).filter(Text.isText);
+        if (initialLeafs.length === 0) return createOrderedListElement();
         return createOrderedListElement([
           createListItemElement([createParagraphElement(initialLeafs)]),
-        ])
+        ]);
       },
     },
     {
@@ -56,17 +56,17 @@ const defaultExtensions: Extension[] = [
       onlyOnBlockStart: true,
       transformType: 'block',
       transform: () => {
-        return createCodeElement()
+        return createCodeElement();
       },
     },
   ]),
-]
+];
 
 export function useExtendedEditor(customExtensions: Extension[] = []) {
   return useMemo(() => {
-    const finalExtensions = [...defaultExtensions, ...customExtensions]
+    const finalExtensions = [...defaultExtensions, ...customExtensions];
 
-    const editor = createEditor()
-    return extend(editor, finalExtensions)
-  }, [extensions])
+    const editor = createEditor();
+    return extend(editor, finalExtensions);
+  }, [extensions]);
 }

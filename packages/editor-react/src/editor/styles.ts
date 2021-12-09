@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
     --editor-code-font-family: 'Source Code Pro', monospace;
     --editor-code-margin: 1.5em 0;
   }
-`
+`;
 
 export const StyledEditor = styled.div`
   & * {
@@ -225,4 +225,4 @@ export const StyledEditor = styled.div`
     width: 280px;
     padding: 8px;
   }
-`
+`;

@@ -1,14 +1,14 @@
-import type { CodeElement } from '../elements'
-import Prism from 'prismjs'
-import { Editor, Node, NodeEntry, Range } from 'slate'
-import type { Decorator } from '@cardbox-editor/core'
-import { GlobalMatchers, GlobalQueries } from '@cardbox-editor/core'
+import Prism from 'prismjs';
+import { Editor, Node, NodeEntry, Range } from 'slate';
+import { GlobalMatchers, GlobalQueries } from '@cardbox-editor/core';
+import type { Decorator } from '@cardbox-editor/core';
+import type { CodeElement } from '../elements';
 
 export const prism: Decorator = (editor: Editor, entry: NodeEntry) => {
-  const [node, path] = entry
+  const [node, path] = entry;
 
-  const isCodeLine = GlobalMatchers.block(editor, 'code-line')
-  if (!isCodeLine(node)) return []
+  const isCodeLine = GlobalMatchers.block(editor, 'code-line');
+  if (!isCodeLine(node)) return [];
 
   /*
    * We need the 'code' node to get the highlight language
@@ -17,16 +17,16 @@ export const prism: Decorator = (editor: Editor, entry: NodeEntry) => {
     at: path,
     type: 'block',
     match: GlobalMatchers.block(editor, 'code'),
-  })
-  if (!codeEntry) return []
-  const [codeNode] = codeEntry
+  });
+  if (!codeEntry) return [];
+  const [codeNode] = codeEntry;
 
-  const ranges: Range[] = []
-  const text = Node.string(node)
+  const ranges: Range[] = [];
+  const text = Node.string(node);
 
-  const tokens = Prism.tokenize(text, Prism.languages[codeNode.language])
+  const tokens = Prism.tokenize(text, Prism.languages[codeNode.language]);
 
-  let offset = 0
+  let offset = 0;
   for (const token of tokens) {
     if (typeof token === 'string') {
       /*
@@ -34,8 +34,8 @@ export const prism: Decorator = (editor: Editor, entry: NodeEntry) => {
        * So, we can just render as a simple string
        */
 
-      offset += token.length
-      continue
+      offset += token.length;
+      continue;
     }
 
     /*
@@ -49,10 +49,10 @@ export const prism: Decorator = (editor: Editor, entry: NodeEntry) => {
       anchor: { path, offset },
       focus: { path, offset: offset + token.length },
       prismToken: token.type,
-    })
+    });
 
-    offset += token.length
+    offset += token.length;
   }
 
-  return ranges
-}
+  return ranges;
+};

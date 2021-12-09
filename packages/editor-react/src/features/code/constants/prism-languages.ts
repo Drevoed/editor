@@ -1,6 +1,6 @@
 export const PRISM_LANGUAGES: Array<{
-  grammarName: string
-  name: string
+  grammarName: string;
+  name: string;
 }> = [
   { grammarName: 'bash', name: 'Bash' },
   { grammarName: 'cmake', name: 'CMake' },
@@ -58,4 +58,4 @@ export const PRISM_LANGUAGES: Array<{
   // { grammarName: 'swift', name: 'Swift' },
   // { grammarName: 'wasm', name: 'WebAssembly' },
   // { grammarName: 'xml', name: 'XML' },
-]
+];

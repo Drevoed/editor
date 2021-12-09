@@ -1,0 +1,10 @@
+
+> @cardbox-editor/editor-react@0.0.0-real-version-will-be-set-at-the-ci build /home/miron/WebstormProjects/editor/packages/editor-react
+> rollup --config rollup.config.js
+
+[36m
+[1msrc/index.ts[22m → [1mdist/index.cjs.js, dist/index.esm.js[22m...[39m
+[32mcreated [1mdist/index.cjs.js, dist/index.esm.js[22m in [1m1.3s[22m[39m
+[36m
+[1msrc/index.ts[22m → [1mdist/index.d.ts[22m...[39m
+[32mcreated [1mdist/index.d.ts[22m in [1m4.3s[22m[39m

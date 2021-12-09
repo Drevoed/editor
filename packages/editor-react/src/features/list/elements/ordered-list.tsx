@@ -1,18 +1,18 @@
-import React from 'react'
-import type { RenderElementProps } from 'slate-react'
+import React from 'react';
 import {
   createOrderedListElement,
   LINK_MODIFICATION,
   TEXT_MODIFICATIONS,
-} from '@cardbox-editor/core'
-import { SettingsRegistry } from "../../../registries/settings";
+} from '@cardbox-editor/core';
+import { SettingsRegistry } from '../../../registries/settings';
+import type { RenderElementProps } from 'slate-react';
 
 export const OrderedListComponent = ({
   attributes,
   children,
 }: RenderElementProps) => {
-  return <ol {...attributes}>{children}</ol>
-}
+  return <ol {...attributes}>{children}</ol>;
+};
 
 SettingsRegistry.set('ordered-list', {
   type: 'ordered-list',
@@ -22,4 +22,4 @@ SettingsRegistry.set('ordered-list', {
   allowedModifications: [...TEXT_MODIFICATIONS, LINK_MODIFICATION],
   allowedTransformations: ['unordered-list'],
   create: createOrderedListElement,
-})
+});

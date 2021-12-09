@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const InputWrapper = styled.div`
     color: rgba(255, 255, 255, 0.8);
     border-color: rgba(255, 255, 255, 0.8);
   }
-`
+`;
 
 const Icon = styled.div`
   display: flex;
@@ -24,13 +24,13 @@ const Icon = styled.div`
     width: 20px;
     height: 20px;
   }
-`
+`;
 
-export const LinkIcon = styled(Icon)``
+export const LinkIcon = styled(Icon)``;
 
 export const ClearIcon = styled(Icon)`
   cursor: pointer;
-`
+`;
 
 export const Input = styled.input`
   width: 100%;
@@ -42,11 +42,11 @@ export const Input = styled.input`
   background: transparent;
   color: inherit;
   outline: none;
-`
+`;
 
 export const Error = styled.div`
   margin-top: 8px;
   margin-bottom: 0;
   padding: 0 4px;
   font-size: 12px;
-`
+`;

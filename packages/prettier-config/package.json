@@ -1,0 +1,8 @@
+{
+  "name": "@cardbox-editor/prettier-config",
+  "main": "prettier-preset.js",
+  "version": "1.0.0",
+  "files": [
+    "prettier-preset.js"
+  ]
+}

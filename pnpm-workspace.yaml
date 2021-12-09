@@ -1,2 +1,7 @@
 packages:
-  - 'packages/**'
+  - 'packages/slate-solid'
+  - 'packages/editor-react'
+  - 'packages/core'
+  - 'packages/eslint-config'
+  - 'packages/prettier-config'
+  - 'config'
