@@ -1,1 +1,0 @@
-{"version":3,"file":"types.js","sourceRoot":"","sources":["types.ts"],"names":[],"mappings":"","sourcesContent":["import type { Text } from 'slate'\n\nexport interface ParagraphElement {\n  type: 'paragraph'\n  children: Text[]\n}\n"]}

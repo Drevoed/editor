@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAA;AAE7B,MAAM,CAAC,MAAM,YAAY,GAAG;IAC1B,IAAI;CACL,CAAA","sourcesContent":["import { info } from './info'\n\nexport const LocalQueries = {\n  info,\n}\n"]}

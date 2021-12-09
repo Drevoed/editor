@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,iCAAiC,CAAA;AAC7D,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAA;AAE/B,WAAW,CAAC,QAAQ,CAAC,KAAK,CAAC,CAAA","sourcesContent":["import { decorations } from '../../../registries/decorations'\nimport { prism } from './prism'\n\ndecorations.register(prism)\n"]}

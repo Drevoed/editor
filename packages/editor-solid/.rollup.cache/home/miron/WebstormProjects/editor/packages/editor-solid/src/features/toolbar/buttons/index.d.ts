@@ -1,1 +1,0 @@
-export { ToolbarMarkButton } from './modification';

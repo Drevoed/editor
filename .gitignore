@@ -7,3 +7,4 @@ dist-ssr
 cardbox-editor-0.0.1.tgz
 .turbo
 packages/**/.turbo
+packages/**/.rollup.cache
