@@ -5,3 +5,5 @@ dist-ssr
 *.local
 .idea
 cardbox-editor-0.0.1.tgz
+.turbo
+packages/**/.turbo
